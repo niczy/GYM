@@ -4,6 +4,7 @@ from controllers.speaching import SpeachingPage
 from controllers.writing import WritingPage
 from controllers.reading import ReadingPage
 from controllers.listening import ListeningPage
+from controllers.homepage import HomePage
 
 
 class MainPage(webapp2.RequestHandler):
@@ -16,5 +17,6 @@ app = webapp2.WSGIApplication(
                 (r'/speaching', SpeachingPage),
                 (r'/listening', ListeningPage),
                 (r'/reading', ReadingPage),
-                (r'/writing', WritingPage)],
+                (r'/writing', WritingPage),
+                (r'/homepage', HomePage)],
                 debug=True)
