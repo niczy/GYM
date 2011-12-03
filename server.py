@@ -20,3 +20,9 @@ app = webapp2.WSGIApplication(
                 (r'/writing', WritingPage),
                 (r'/homepage', HomePage)],
                 debug=True)
+
+def main():
+    run_wsgi_app(app)
+
+if __name__ == "__main__":
+    main()
