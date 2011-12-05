@@ -13,7 +13,7 @@ Associate renderer class with its corresponding template file path
 class Template():
 
     file_path_map_ = {
-      'HomePage' : 'static_data/templates/homepage.tpl',
+      'HomePage' : 'static/templates/homepage.tpl',
     }
 
     @staticmethod

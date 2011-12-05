@@ -7,18 +7,22 @@ Created on Dec 5, 2011
 @author: charliezhang
 '''
 
+WEBSITE_NAME_EN = 'Toefl-Killer'
+WEBSITE_NAME_CN = '托福杀手'
+
 '''
 Global static vars used in templates.
 '''
 class GlobalValues():
     template_values_ = {
-        'home_page_link' : '/'
+        'link_home_page' : '/'
     }
     template_values_en_ = {                   
-        'home_page_title' : 'Toelf-Killer | Home',     
+        'text_home_page_title' : WEBSITE_NAME_EN + ' | Home',
+
     }
     template_values_cn_ = {
-        'home_page_title' : '托福杀手 | 首页',     
+        'text_home_page_title' : WEBSITE_NAME_CN + ' | 首页',     
     }
 
     @staticmethod

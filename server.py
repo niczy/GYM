@@ -6,14 +6,8 @@ from controllers.reading import ReadingPage
 from controllers.listening import ListeningPage
 from controllers.homepage import HomePage
 
-
-class MainPage(webapp.RequestHandler):
-    def get(self):
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.out.write('Hello, webapp World!')
-
 app = webapp.WSGIApplication(
-                [('/', MainPage),
+                [('/', HomePage),
                 (r'/speaching', SpeachingPage),
                 (r'/listening', ListeningPage),
                 (r'/reading', ReadingPage),

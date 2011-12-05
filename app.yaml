@@ -4,5 +4,11 @@ runtime: python
 api_version: 1
 
 handlers:
+- url: /static/css
+  static_dir: static/stylesheets
+
+- url: /staticpage
+  static_dir: static/pages
+
 - url: /.*
   script: server.py

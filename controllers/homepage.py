@@ -14,9 +14,9 @@ class HomePage(webapp.RequestHandler):
     def get(self):
         template_values = GlobalValues.TemplateValues('CN');
         
-        description = 'This page is generated from a template!'
+        # description = 'This page is generated from a template!'
         template_values.update({
-            'description': description,
+        #    'description': description,
         })
 
         path = Template.GetFilePath(self)
