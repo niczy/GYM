@@ -5,8 +5,21 @@ Created on Dec 3, 2011
 '''
 
 from google.appengine.ext import webapp
+from google.appengine.ext.webapp import template
+from models.predefined_template_values import GlobalValues
+from models.template_file_paths import Template
+
 
 class HomePage(webapp.RequestHandler):
     def get(self):
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.out.write('Welcome to Toefl-Killer!')
+        template_values = GlobalValues.TemplateValues('CN');
+        
+        description = 'This page is generated from a template!'
+        template_values.update({
+            'description': description,
+        })
+
+        path = Template.GetFilePath(self)
+        self.response.out.write(template.render(path, template_values))
+        
+
