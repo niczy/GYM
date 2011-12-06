@@ -10,7 +10,7 @@ import sys
 '''
 Associate renderer class with its corresponding template file path
 '''
-class Template():
+class TemplatePathFinder():
 
     file_path_map_ = {
       'HomePage' : 'static/templates/homepage.tpl',
@@ -20,7 +20,7 @@ class Template():
     def GetFilePath(RendererClass):
         base_dir = sys.path[0];
         return os.path.join(base_dir,
-                            Template.file_path_map_.get(RendererClass.__class__.__name__))
+                            TemplatePathFinder.file_path_map_.get(RendererClass.__class__.__name__))
     
     def __init__(self):
         '''

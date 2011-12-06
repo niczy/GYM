@@ -46,7 +46,7 @@
 </div>
 </div>
 <div id="footer">
-<p>&copy; 2011 GYM &middot; <a href="http://blog.zhihu.com/" target="_blank">GYM博客</a> &middot; <a href="http://weibo.com/wenzhihu" target="_blank" rel="nofollow">新浪微博</a>
+<p>&copy; 2011 GYM &middot; <a href="http://blog.zhihu.com/" target="_blank">GYM博客</a> &middot; <a href="http://weibo.com/wenzhihu" target="_blank" rel="nofollow">{{ description }}</a>
 <br />
 <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备12345678号</a></p>
 </div>

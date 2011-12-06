@@ -1,10 +1,10 @@
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
-from controllers.speaching import SpeachingPage
-from controllers.writing import WritingPage
-from controllers.reading import ReadingPage
-from controllers.listening import ListeningPage
-from controllers.homepage import HomePage
+from src.controllers.testpage.speaching import SpeachingPage
+from src.controllers.testpage.writing import WritingPage
+from src.controllers.testpage.reading import ReadingPage
+from src.controllers.testpage.listening import ListeningPage
+from src.controllers.sitepape.homepage import HomePage
 
 app = webapp.WSGIApplication(
                 [('/', HomePage),

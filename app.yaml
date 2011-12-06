@@ -11,4 +11,4 @@ handlers:
   static_dir: static/pages
 
 - url: /.*
-  script: server.py
+  script: src/base/server.py
