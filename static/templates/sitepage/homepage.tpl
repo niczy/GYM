@@ -5,6 +5,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>{{ text_home_page_title }}</title>
+<link rel="stylesheet" type="text/css" media="screen" href="static/css/desktop/gh.css" media="all"/>
 <link rel="stylesheet" type="text/css" media="screen" href="static/css/desktop/main.css" media="all"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
@@ -16,6 +17,7 @@
 <![endif]-->
 <div id="page">
 <h1>{{ text_home_page_title }}</h1>
+{{ panel_1 }} {{ panel_2 }} {{ panel_3 }}
 <div id="login_form">
 <form action="/login" method="post">
 <input type="hidden" name="_xsrf" value="bf127eb4e078478c868d749141f68838"/>
