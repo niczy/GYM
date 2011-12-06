@@ -32,4 +32,34 @@ Here we describe the restful api
 }
 
 
+口语
+1. 
+{
+   "description": "question 1" 
+}
 
+2.
+{
+    "description": "question 2"
+}
+
+3.
+
+{
+    "text": "text material",
+    "audio": "http://****/x.mp3",
+    "question": "this is the question"
+}
+
+写作
+1.
+{
+    "text": "text material",
+    "audio": "http://****/x.mp3",
+    "question": "this is the question"
+}
+
+2.
+{
+    "description": "this is the question description"
+}
