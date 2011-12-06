@@ -1,0 +1,35 @@
+Here we describe the restful api
+
+托福的考试形式大多是选择题（除了写作，听力中有少数主观题）。
+
+每一套试题有一个唯一的id(t_id)。在该套试题下每个题目有一个id(q_id)
+
+
+阅读
+{
+    "passage": [paragraph1, paragraph2, paragraph3, ...],
+        "questions": [
+        {"description": "this is a question" //问题的描述
+            "paragraph": 1, //该问题对应正文的第几段
+            "options": [option0, opetion2, option2, option3], //选项
+            "choice_number": 1 //答案的数目，有多选题时提供
+        },
+        ...
+            ]
+}
+
+
+听力
+{
+    "audio": "http://*****/audio.mp3",
+        "questions": [
+        {"description": "question1", //题目的描述
+            "audio": "http://**/question_audio.> mp3", //题目描述的音频
+            "options": [option0, opetion2, option2, option3], //选项们
+            "choice_number": 1 //答案的数目
+        }
+    ]
+}
+
+
+
