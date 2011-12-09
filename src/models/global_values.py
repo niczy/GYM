@@ -54,6 +54,7 @@ class TemplateFilePaths():
     file_path_map_ = {
       'HomePage' : 'static/templates/sitepage/homepage.tpl',
       'Panel' : 'static/templates/sitepage/elements/panel.tpl',
+      'ListeningPage' : 'static/templates/testpage/listening.tpl',
     }
 
     @staticmethod

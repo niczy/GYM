@@ -9,6 +9,9 @@ handlers:
 
 - url: /staticpage
   static_dir: static/pages
+  
+- url: /static/audio
+  static_dir: static/audio
 
 - url: /.*
   script: src/base/server.py
