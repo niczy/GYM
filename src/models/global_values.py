@@ -59,7 +59,8 @@ class TemplateFilePaths():
 
     @staticmethod
     def Get(RendererClass):
-        base_dir = sys.path[0];
+        base_dir = os.path.join(os.path.dirname(__file__),
+                                os.path.pardir, os.path.pardir);
         return os.path.join(
             base_dir,
             TemplateFilePaths.file_path_map_.get(RendererClass.__class__.__name__))
