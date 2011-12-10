@@ -51,6 +51,29 @@ Here we describe the restful api
     "question": "this is the question"
 }
 
+4.
+
+{
+    "text": "text material",
+    "audio": "http://****/x.mp3",
+    "question": "this is the question"
+}
+
+5.
+{
+    "audio": "http://***/x.mp3",
+    "question": "this is the question"
+}
+
+6.
+{
+    "audio": "http://***/x.mp3",
+    "question": "this is the question"
+}
+
+
+
+
 写作
 1.
 {
