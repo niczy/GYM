@@ -4,27 +4,12 @@ Created on Dec 10, 2011
 @author: charliezhang
 '''
 
-from src.controllers.base.handlers import RequestHandler
-from src.models.data_types import User
-from src.models.data_proxy import DataProxy
+from controllers.base.handlers import RequestHandler
+from models.data_types import User
 
 class SignUp(RequestHandler):
     def get(self):
-        self.RenderPage()
+        self.Render('pages/signup_page.html')
     
     def post(self):
-        user = User();
-        user.username = self.request.get('username');
-        user.email = self.request.get('email');
-        user.password = self.request.get('password');
-        if DataProxy.GetUserByUsername(user.username):
-            self.response.out.write('Failed! Username existed: ' + user.username);
-            return
-        if DataProxy.GetUserByEmail(user.email):
-            self.response.out.write('Failed! Email already used: ' + user.email);
-            return
-        result = DataProxy.RegisterUser(user);
-        if result:
-            self.response.out.write('Success!');
-        else:
-            self.response.out.write('Failed!');
+        pass
