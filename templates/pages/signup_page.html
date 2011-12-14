@@ -1,14 +1,25 @@
 <html>
+<head>
+<script src="/static/js/jquery-1.7.1.min.js"></script>
+<script src="/static/js/login.js"></script>
+</head>
 <body>
 <form action="/signup" method="post">
   <div><span>User Name:</span></div>
-  <div><textarea name="username" rows="1" cols="60"></textarea></div>
+  <input name="username" id="username" type="text" check-url="/signup_check/username" err-msg="username_err_msg"></input>
+  <dd id="username_err_msg" style="display:none;color:red;"></dd>
   <br/>
   <div><span>Email Address:</span></div>
-  <div><textarea name="email" rows="1" cols="60"></textarea></div>
+  <input name="email" id="email" type="text" check-url="/signup_check/email" err-msg="email_err_msg"></input>
+  <dd id="email_err_msg" style="display:none;color:red;"></dd>
   <br/>
   <div><span>Password:</span></div>
-  <div><textarea name="password" rows="1" cols="60"></textarea></div>
+  <input name="password" id="password" type="password"></input>
+  <dd id="password_err_msg" style="display:none;color:red;"></dd>
+  <br/>
+  <div><span>Confirm Password:</span></div>
+  <input name="confirm" id="confirm" type="password" err-msg="confirm_err_msg"></input>
+  <dd id="confirm_err_msg" style="display:none;color:red;">Password Doesn't Match!</dd>
   <br/>
   <div><input type="submit" value="Sign Up!"></div>
 </form>

@@ -12,6 +12,12 @@ handlers:
   
 - url: /static/audio
   static_dir: static/audio
-
+  
+- url: /static/js
+  static_dir: static/js
+  
+- url: /static/images
+  static_dir: static/images
+  
 - url: /.*
   script: server.py
