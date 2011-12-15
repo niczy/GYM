@@ -1,1 +1,8 @@
-Edit by Zero
+About JS
+1. All the scripts need to be put under scripts folder
+2. "make dev" will copy scripts into static/js folder
+3.  lib/	All the third part libiraries.  
+    action/	Some action bundle. To be determined.
+    widget/	All the widgets composed by action, view and models
+
+ 
