@@ -1,9 +1,11 @@
-<html>
-  <body>
-    <div>
-      <textarea name="content" rows="3" cols="60">
-        This is a static homepage!
-      </textarea>
-    </div>
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block content %} 
+This is the home page
+{% endblock %}
+
+
+
+{% block entry_script %}
+static/js/home_page_entry.js
+{% endblock %}

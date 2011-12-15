@@ -1,6 +1,7 @@
 from google.appengine.ext import webapp
+from controllers import render_page
 
 class WritingPage(webapp.RequestHandler):
+
     def get(self):
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.out.write('Hello, this is writing page!')
+	render_page("wriging_page.html", None)
