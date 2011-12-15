@@ -3,8 +3,9 @@ Created on Dec 3, 2011
 
 @author: charliezhang
 '''
-from controllers.base.handlers import RequestHandler
+from google.appengine.ext import webapp
+from controllers import render_page
 
-class HomePage(RequestHandler):
+class HomePage(webapp.RequestHandler):
     def get(self):
-        self.response.out.write("Main page") 
+	render_page(self, "home_page.html", None)
