@@ -5,6 +5,9 @@ from controllers.practice.writing import WritingPage
 from controllers.practice.reading import ReadingPage
 from controllers.practice.listening import ListeningPage
 from controllers.home import HomePage
+from controllers.signup import SignUp
+from controllers.signup import SignUpCheck
+
 
 app = webapp.WSGIApplication(
                 [('/', HomePage),
@@ -12,7 +15,9 @@ app = webapp.WSGIApplication(
                 (r'/listening', ListeningPage),
                 (r'/reading', ReadingPage),
                 (r'/writing', WritingPage),
-                (r'/homepage', HomePage)],
+                (r'/homepage', HomePage),           
+                (r'/signup_check/(.*)', SignUpCheck),
+                (r'/signup', SignUp)],
                 debug=True)
 
 def main():
