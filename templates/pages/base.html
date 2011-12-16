@@ -1,7 +1,9 @@
 <html>
     <head>
+	<link type="text/css" rel="stylesheet" href="static/css/gym.css">
     </head>
-    <body>
+    <body class="gym-page">
+	{% include "../componets/header.html" %}
         {% block content %}{% endblock %}
 	<script src="static/js/sea.js"></script>
 	<script src="{% block entry_script %}{% endblock %}"></script>
