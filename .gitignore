@@ -1,4 +1,4 @@
 controllers/*.pyc
 *.pyc
-static/js/*
+static/*
 *.swp
