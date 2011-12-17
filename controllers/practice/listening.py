@@ -1,7 +1,9 @@
-from google.appengine.ext import webapp
 from controllers import render_page
+from controllers import require_login
+from controllers import RequestHandler
 
-class ListeningPage(webapp.RequestHandler):
+class ListeningPage(RequestHandler):
 
-    def get(self):        
-	render_page("listening_page.html", None)
+    @require_login('/')
+    def get(self):
+	    render_page(self, "listening_page.html", None)

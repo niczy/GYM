@@ -3,8 +3,9 @@
 	<link type="text/css" rel="stylesheet" href="static/css/gym.css">
     </head>
     <body class="gym-page">
-	{% include "../componets/header.html" %}
+	{% include "../components/header.html" %}
         {% block content %}{% endblock %}
+    {% include "../components/footer.html" %}
 	<script src="static/js/sea.js"></script>
 	<script src="{% block entry_script %}{% endblock %}"></script>
     </body>

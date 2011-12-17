@@ -1,7 +1,7 @@
-from google.appengine.ext import webapp
 from controllers import render_page
+from controllers import RequestHandler
 
-class SpeachingPage(webapp.RequestHandler):
+class SpeachingPage(RequestHandler):
 
     def get(self):
-	render_page("listening_page.html", None)
+	    render_page(self, "listening_page.html", None)

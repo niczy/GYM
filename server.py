@@ -7,6 +7,8 @@ from controllers.practice.listening import ListeningPage
 from controllers.home import HomePage
 from controllers.signup import SignUp
 from controllers.signup import SignUpCheck
+from controllers.login import Login
+from controllers.login import Logout
 
 
 app = webapp.WSGIApplication(
@@ -17,7 +19,9 @@ app = webapp.WSGIApplication(
                 (r'/writing', WritingPage),
                 (r'/homepage', HomePage),           
                 (r'/signup_check/(.*)', SignUpCheck),
-                (r'/signup', SignUp)],
+                (r'/signup', SignUp),
+                (r'/login', Login),
+                (r'/logout', Logout)],
                 debug=True)
 
 def main():

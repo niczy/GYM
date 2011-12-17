@@ -1,9 +1,9 @@
-<html>
-<head>
-<script src="/static/js/jquery-1.7.1.min.js"></script>
-<script src="/static/js/login.js"></script>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %} 
+{% if error %}
+<div class="error">{{ error_msg }}</div>
+{% endif %}
 <form action="/signup" method="post">
   <div><span>User Name:</span></div>
   <input name="username" id="username" type="text" check-url="/signup_check/username" err-msg="username_err_msg"></input>
@@ -21,7 +21,11 @@
   <input name="confirm" id="confirm" type="password" err-msg="confirm_err_msg"></input>
   <dd id="confirm_err_msg" style="display:none;color:red;">Password Doesn't Match!</dd>
   <br/>
-  <div><input type="submit" value="Sign Up!"></div>
+  <div><input type="submit" value="Sign Up!" id="signup_button"></div>
 </form>
-</body>
-</html>
+{% endblock %}
+
+
+{% block entry_script %}
+static/js/signup_page_entry.js
+{% endblock %}

@@ -1,0 +1,9 @@
+<div class="header">
+    <h1 class="logo"> GYM </h1>
+    {% if logged_in %}
+    <h3> Username: {{ username }} <h3>
+    <a href='/logout'> Logout </a>
+    {% else %}
+    <a href='/login'> Login </a>
+    {% endif %}
+</div>

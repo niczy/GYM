@@ -1,7 +1,7 @@
-from google.appengine.ext import webapp
 from controllers import render_page
+from controllers import RequestHandler
 
-class WritingPage(webapp.RequestHandler):
+class WritingPage(RequestHandler):
 
     def get(self):
-	render_page("wriging_page.html", None)
+	    render_page(self, "writing_page.html", None)
