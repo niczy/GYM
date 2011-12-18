@@ -4,7 +4,7 @@ define(function(require, exports) {
 	var ReadingQuestionView = Backbone.View.extend({
 		el: 'body',
 		render: function() {
-			$(this.el).html("Hello world");
+			$(this.el).text(this.model.description);
 			return this;
 		}
 	});
