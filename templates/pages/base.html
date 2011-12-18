@@ -6,7 +6,13 @@
 	{% include "../components/header.html" %}
         {% block content %}{% endblock %}
     {% include "../components/footer.html" %}
-	<script src="static/js/sea.js"></script>
-	<script src="{% block entry_script %}{% endblock %}"></script>
+	<script src="/static/js/sea.js"></script>
+    <script src="/static/js/vendors/underscore.js"></script>
+    <script src="/static/js/vendors/jquery-1.7.1.js"></script>
+    <script src="/static/js/vendors/backbone.js"></script>
+	<script src="/static/js/apps/{% block app_script%}{% endblock %}.js" ></script>
+    <script>
+        seajs.use("/static/js/apps/{% block use_script%}{% endblock %}");
+    </script>
     </body>
 </html>

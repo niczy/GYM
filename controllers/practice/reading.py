@@ -3,5 +3,6 @@ from controllers import RequestHandler
 
 class ReadingPage(RequestHandler):
 
-    def get(self):
-        render_page(self, "reading_page.html", None)
+    def get(self, testid, sectionid):
+        print testid
+        render_page(self, "reading_page.html", {'testid': testid, "sectionid": sectionid})
