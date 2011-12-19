@@ -5,7 +5,7 @@ define(function(require, exports) {
 
 	var ReadingSectionModel = Backbone.Model.extend({
 		url: function() {
-			return "/" + this.get('testid') + "/reading/" + this.get('sectionid');
+			return "/api/reading/get";
 		},
 		name: "This is the reading section model"
 	});

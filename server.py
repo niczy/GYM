@@ -14,6 +14,7 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 from controllers.practice.speaching import SpeachingPage
 from controllers.practice.writing import WritingPage
 from controllers.practice.reading import ReadingPage
+from controllers.practice.reading import ApiGetReadingSection
 from controllers.practice.listening import ListeningPage
 from controllers.home import HomePage
 from controllers.home import TestMenu
@@ -43,6 +44,7 @@ app = webapp.WSGIApplication(
                 [('/', HomePage),
                 (r'/speaching', SpeachingPage),
                 (r'/listening', ListeningPage),
+                (r'/api/reading/get', ApiGetReadingSection), 
                 (r'/(.*)/reading/(.*)', ReadingPage),
                 (r'/writing', WritingPage),
                 (r'/homepage', HomePage),           
