@@ -1,3 +1,14 @@
+import os
+import os.path
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+
+from google.appengine.dist import use_library
+use_library('django', '1.2')
+
+from django.conf import settings
+
+settings.configure(INSTALLED_APPS=('nothing',))
+
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 from controllers.practice.speaching import SpeachingPage
@@ -26,6 +37,7 @@ For questions:
     Method post, to post my answer to put the user's answer to the question
 
 '''
+
 app = webapp.WSGIApplication(
                 [('/', HomePage),
                 (r'/speaching', SpeachingPage),

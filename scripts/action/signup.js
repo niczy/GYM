@@ -1,32 +1,32 @@
 define(function(require, exports, module) {
-    var $ = require('../lib/jquery');
+    var $ = require('../libs/jquery');
 	exports.init = function() {
     	$(document).ready(function(){
 			errorify = function(input, data) {
-    				input.css("background-image", "url(/static/images/error.png)");
-    				var err_msg = '#' + input.attr('err-msg');
+    				//input.css("background-image", "url(/static/images/error.png)");
+				input.attr('class', 'bad');
+
+				var err_msg = '#' + input.attr('err-msg');
     				if (!err_msg) { return; }
     				$(err_msg).text(data);
 				$(err_msg).show('fast');   				
     			};
     			unErrorify = function(input) {
-    				input.css("background-image", "none");
+    				input.attr('class', 'input none');
     				var err_msg = '#' + input.attr('err-msg');
     				if (!err_msg) { return; }
 				$(err_msg).hide('fast');
     			};
     			goodify = function(input) {
     				unErrorify(input);
-    				input.css("background-image", "url(/static/images/success.png)");
+    				input.attr('class', 'input good');
     			};
-    			$('input').css('background-repeat', 'no-repeat');
-    			$('input').css('background-position', 'right'); 
     			$('input').blur(function(){
     				var url = $(this).attr('check-url');
     				var err_msg = '#' + $(this).attr('err-msg');
     				if (!url) return;
-    				$(this).css("background-image", "url(/static/images/indicator.gif)");  
     				var input = $(this);
+    				input.attr('class', 'input loading');
     				$.post(url, {value:$(this).val()}, function(data){
     					if (data == 'good'){
     						goodify(input);

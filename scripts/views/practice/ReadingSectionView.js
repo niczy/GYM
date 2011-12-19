@@ -3,7 +3,7 @@ define(function(require, exports) {
 	var ReadingSectionView = Backbone.View.extend({
 	el: '#reading-section', render: function() {
         var $ = require('../../libs/jquery');
-		$(this.el).text(this.model.get('testid') + " " + this.model.get('sectionid'));
+		$(this.el).text(this.model.get('testid') + " " + this.model.get('name'));
         return this;
 	}});
     return ReadingSectionView;
