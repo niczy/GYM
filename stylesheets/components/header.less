@@ -1,16 +1,50 @@
 .header {
-    background-color: #ededef;
-    height: 82px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    width: 100%;
+
+	background: #FAFAFA;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fafafa',endColorstr='#eaeaea');
+	background: -webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#EAEAEA));
+	background: -moz-linear-gradient(top,#FAFAFA,#EAEAEA);
+	background: -o-linear-gradient(top,#FAFAFA,#EAEAEA);
+	position: relative;
+	z-index: 10;
+	border-bottom: 1px solid #CACACA;
+	box-shadow: 0 1px 0 rgba(255,255,255,0.4),0 0 10px rgba(0,0,0,0.1);
+	margin: 0;
+
 
     .logo {
-	float: left;
-	width: 240px;
-	height: 44px;
-	margin: 19px 0 0;
+		float: left;
+		width: 240px;
+		height: 44px;
+		margin: 19px 0 0;
     }
+    	
+    .top-nav {
+		float: left;
+		margin: 0 0 0 20px;
+		list-style: none;
+		line-height: 26px;
+			
+		li {
+			float: left;
+			margin: 0 20px 0 0;
+		}
+		
+		a {
+			font-weight: bold;
+			color: #222;
+			transition: all .15s ease-in 0;
+			-moz-transition-property: all;
+			-moz-transition-timing-function: ease-in;
+			-moz-transition-duration: .15s;
+			-moz-transition-delay: 0;
+			-webkit-transition-property: all;
+			-webkit-transition-timing-function: ease-in;
+			-webkit-transition-duration: .15s;
+			-webkit-transition-delay: 0;
+			text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+		}
+	}
 }
 
 

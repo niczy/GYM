@@ -4,28 +4,28 @@
 {% if error %}
 <div class="error">{{ error_msg }}</div>
 {% endif %}
-<form action="/signup" method="post">
+<form action="/signup" autocomplete="off" method="post" class="form">
   <div><span>User Name:</span></div>
-  <input name="username" id="username" type="text" check-url="/signup_check/username" err-msg="username_err_msg"></input>
-  <dd id="username_err_msg" style="display:none;color:red;"></dd>
+  <input name="username" type="text" check-url="/signup_check/username" err-msg="username_err_msg"></input>
+  <dd id="username_err_msg" class="warning"></dd>
   <br/>
   <div><span>Email Address:</span></div>
-  <input name="email" id="email" type="text" check-url="/signup_check/email" err-msg="email_err_msg"></input>
-  <dd id="email_err_msg" style="display:none;color:red;"></dd>
+  <input name="email" type="text" check-url="/signup_check/email" err-msg="email_err_msg"></input>
+  <dd id="email_err_msg" class="warning"></dd>
   <br/>
   <div><span>Password:</span></div>
   <input name="password" id="password" type="password"></input>
-  <dd id="password_err_msg" style="display:none;color:red;"></dd>
+  <dd id="password_err_msg" class="warning"></dd>
   <br/>
   <div><span>Confirm Password:</span></div>
   <input name="confirm" id="confirm" type="password" err-msg="confirm_err_msg"></input>
-  <dd id="confirm_err_msg" style="display:none;color:red;">Password Doesn't Match!</dd>
+  <dd id="confirm_err_msg" class="warning">Password Doesn't Match!</dd>
   <br/>
   <div><input type="submit" value="Sign Up!" id="signup_button"></div>
 </form>
 {% endblock %}
 
 
-{% block entry_script %}
-static/js/signup_page_entry.js
-{% endblock %}
+{% block app_script %}SignupPageApp{% endblock %}
+
+{% block use_script %}SignupPageApp{% endblock %}

@@ -1,0 +1,41 @@
+.tabs {
+	position: relative;
+	margin: 10px 0 0 0;
+	height: 34px;
+	font-size: 12px;
+	font-weight: bold;
+	background: url('/static/images/navigation/bar_background.png') 0 0 repeat-x;
+	border: 1px solid #EAEAEA;
+	border-bottom-color: #CACACA;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border-image: initial;
+	
+	.selected {
+		color: black;
+		background: url('/static/images/navigation/highlight.png') 0 0 repeat-x;
+	}
+	
+	li {
+		list-style-type: none;
+		margin: 0;
+		display: table-cell;
+		width: 1%;
+	}
+	
+	a {
+		display: block;
+		height: 34px;
+		text-align: center;
+		line-height: 35px;
+		font-size: 12px;
+		color: #777;
+		text-decoration: none;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 1.0);
+		border-right: 1px solid #EEE;
+		border-right-color: rgba(0, 0, 0, 0.04);
+		border-left: 1px solid #FCFCFC;
+		border-left-color: rgba(255, 255, 255, 0.7);
+	}
+}
