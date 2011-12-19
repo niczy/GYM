@@ -21,13 +21,13 @@ def render_page(handler, page_name, values):
 
 def require_login(url):
     def login_check(fn):
-        def Get(self):
+        def Get(self, *args):
             self.username = self.request.cookies.get('username')
             if self.username == None and url != None:
                 self.redirect(url)
                 return
             else:
-                fn(self)
+                fn(self, *args)
         return Get
     return login_check
 

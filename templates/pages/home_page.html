@@ -2,12 +2,14 @@
 
 {% block content %} 
 <div class="content-wrapper">
-This is the home page
+{% with 1 as selected %}
+{% include "components/tabs.html" %}
+{% endwith %}
+<div id="test-menu">
+</div>
 </div>
 {% endblock %}
 
+{% block app_script %}HomePageApp{% endblock %}
 
-
-{% block entry_script %}
-static/js/home_page_entry.js
-{% endblock %}
+{% block use_script %}HomePageApp{% endblock %}
