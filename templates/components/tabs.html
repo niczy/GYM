@@ -3,12 +3,12 @@
 	<a href='/'{% if selected = 1 %} class="selected"{% endif %}>Tests</a>
   </li>
   <li>
-	<a href='/practice' >Practices</a>
+	<a href='/practice'{% if selected = 2 %} class="selected"{% endif %}>Practices</a>
   </li>
   <li>
-	<a href='/upload'>Upload</a>
+	<a href='/upload'{% if selected = 3 %} class="selected"{% endif %}>Upload</a>
   </li>
   <li>
-	<a href='/account'>My Account</a>
+	<a href='/account'{% if selected = 4 %} class="selected"{% endif %}>My Account</a>
   </li>
 </ul>
