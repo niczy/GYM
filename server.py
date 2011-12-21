@@ -16,6 +16,7 @@ from controllers.practice.writing import WritingPage
 from controllers.practice.reading import ReadingPage
 from controllers.practice.listening import ListeningPage
 from controllers.home import HomePage
+from controllers.home import TestMenu
 from controllers.signup import SignUp
 from controllers.signup import SignUpCheck
 from controllers.login import Login
@@ -48,7 +49,8 @@ app = webapp.WSGIApplication(
                 (r'/signup_check/(.*)', SignUpCheck),
                 (r'/signup', SignUp),
                 (r'/login', Login),
-                (r'/logout', Logout)],
+                (r'/logout', Logout),
+                (r'/api/testmenu', TestMenu)],
                 debug=True)
 
 def main():

@@ -53,7 +53,7 @@ class JSONRequestHandler(webapp.RequestHandler):
         self.template_values = {
         }
 
-    def Response(self, json):
-        #self.response.headers['Content-Type'] = 'application/jsonrequest'
-        self.response.headers['Content-Type'] = 'text/plain'
+    def Response(self, json, type='application/jsonrequest'):
+        self.response.headers['Content-Type'] = type
+        #self.response.headers['Content-Type'] = 'text/plain'
         self.response.out.write(json)
