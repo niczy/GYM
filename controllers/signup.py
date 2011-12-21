@@ -54,7 +54,7 @@ class SignUpCheck(JSONRequestHandler):
             
         elif check_field == 'email':
             result = 'good'
-        self.Response(result);
+        self.Response(result, 'text/plain');
     
     @staticmethod
     def ValidUsername(username):

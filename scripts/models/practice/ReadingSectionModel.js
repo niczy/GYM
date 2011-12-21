@@ -1,7 +1,7 @@
 define(function(require, exports) {
 	var Backbone = require('../../libs/backbone');
-	var ReadingArticleModel = require('ReadingArticleModel');
-	var ReadingQuestionCollection = require('ReadingQuestionCollection');
+	var ReadingArticleModel = require('./ReadingArticleModel');
+	var ReadingQuestionCollection = require('./ReadingQuestionCollection');
 
 	var ReadingSectionModel = Backbone.Model.extend({
 		url: function() {

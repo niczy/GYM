@@ -1,5 +1,5 @@
 define(function(require, exports) {
-	var Backbone = reuqire('../../libs/backbone')
+	var Backbone = require('../../libs/backbone')
 	var ReadingArticleModel = Backbone.Model.extend({
 		name: "This is a article"
 	});
