@@ -2,6 +2,7 @@ define(function(require, exports) {
 	var Backbone = require('../libs/backbone');
 	var $ = require('../libs/jquery');
 	var _ = require('../libs/underscore');
+	require('../action/tabs.js');
 	var test_collection = new Backbone.Collection([
 	                                          {testid: "1", title: "TPO1"},
 	                                          {testid: "2", title: "TPO2"},
@@ -10,7 +11,9 @@ define(function(require, exports) {
 
 	                                       // alert(JSON.stringify(collection));
 	                                       // collection.each(function(e){alert(JSON.stringify(e))})
+	
 	var HomePageApp = Backbone.Router.extend({
+		reverse : false,
 		initialize: function() {
 			var TestMenuView = require('../views/menu/TestMenuView');
 			var TestMenuModel = require('../models/menu/TestMenuModel');
@@ -30,28 +33,38 @@ define(function(require, exports) {
 			});
 			testMenuView.render();
 			
-			$("#menu-order-select").change(function () {
-	          var str = "";
-	          $("select option:selected").each(function () {
-	                str = $(this).attr('value');
-	           });
-	          console.log("Sort By: " + str);
-	          testMenuModel.get('testitems').comparator = function(item) {
-	        	  	return item.get(str);
-	          };
-	          testMenuModel.get('testitems').sort();
-	          testMenuView.render();
-	          /*var oldItems = testMenuModel.get('testitems');
-	          console.log(oldItems);
-	          var sortedItems = _.sortBy(oldItems, function(item) {
-	        	     console.log('sort key: ' + item.get(str));
-	        	  	return item.get(str);
-	          });
-			 console.log('Sorted: ' + sortedItems);
-	          testMenuModel.set({testitems: sortedItems});*/
+			var GetSortField = function() {
+				var select = $("#menu-order-select");
+		        var str = "";
+		        $("select option:selected").each(function () {
+		              str = $(this).attr('value');
+		        });
+		        return str;
+			};
+			var that = this;
+			var SortMenuBy = function(field) {
 
-	        })
-	        .trigger('change');
+	            console.log("Sort By: " + field);
+	            testMenuModel.get('testitems').comparator = function(item) {
+	        	      if (!that.reverse) {
+	        	    	      return item.get(field);
+	        	      } else {
+	        	    	      return -item.get(field);
+	        	      }
+	            };
+	            testMenuModel.get('testitems').sort();
+	            testMenuView.render();      
+			};
+			
+			
+			$("#reverse-menu").click(function() {
+				that.reverse = !that.reverse;
+				SortMenuBy(GetSortField());
+			});
+
+			$("#menu-order-select").change(function () {
+				SortMenuBy(GetSortField());
+	        }).trigger('change');
 		}
 	})
 

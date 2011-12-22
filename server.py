@@ -13,15 +13,19 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 from controllers.practice.speaching import SpeachingPage
 from controllers.practice.writing import WritingPage
-from controllers.practice.reading import ReadingPage
-from controllers.practice.reading import ApiGetReadingSection
+#from controllers.practice.reading import ReadingPage
+#from controllers.practice.reading import ApiGetReadingSection
 from controllers.practice.listening import ListeningPage
-from controllers.home import HomePage
-from controllers.home import TestMenu
-from controllers.signup import SignUp
-from controllers.signup import SignUpCheck
-from controllers.login import Login
-from controllers.login import Logout
+from controllers.site.home import HomePage
+from controllers.site.home import TestMenu
+from controllers.site.signup import SignUp
+from controllers.site.signup import SignUpCheck
+from controllers.site.login import Login
+from controllers.site.login import Logout
+from controllers.site.landing import LandingPage
+from controllers.site.practice import PracticeMenuPage
+from controllers.site.practice import PracticeMenu
+
 
 '''
 Url ruls:
@@ -44,15 +48,19 @@ app = webapp.WSGIApplication(
                 [('/', HomePage),
                 (r'/speaching', SpeachingPage),
                 (r'/listening', ListeningPage),
-                (r'/api/reading/get', ApiGetReadingSection), 
-                (r'/(.*)/reading/(.*)', ReadingPage),
+                #(r'/api/reading/get', ApiGetReadingSection), 
+                #(r'/(.*)/reading/(.*)', ReadingPage),
+                (r'/landing', LandingPage),
                 (r'/writing', WritingPage),
                 (r'/homepage', HomePage),           
                 (r'/signup_check/(.*)', SignUpCheck),
                 (r'/signup', SignUp),
                 (r'/login', Login),
                 (r'/logout', Logout),
-                (r'/api/testmenu', TestMenu)],
+                (r'/api/testmenu', TestMenu),
+                (r'/api/practicemenu', PracticeMenu),
+                (r'/practices', PracticeMenuPage),
+                (r'/practices/(.*)', PracticeMenuPage)],
                 debug=True)
 
 def main():

@@ -8,7 +8,7 @@ from controllers import render_page
 from controllers import RequestHandler
 from controllers import JSONRequestHandler
 from models.data_types import User
-from controllers.login import Login
+from controllers.site.login import Login
 
 class SignUp(RequestHandler):
     def get(self):

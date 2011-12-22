@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %} 
+<div class="content-wrapper">
+{% with 2 as selected %}
+{% include "components/tabs.html" %}
+{% endwith %}
+{% with practice_type as selected %}
+{% include "components/subnav-bar.html" %}
+{% endwith %}
+<div id="practice-menu" name="{{ practice_type }}">
+<label>Order By:</label>
+<select id="menu-order-select">
+    <option value="practiceid">Default</option>  
+    <option value="viewer">Num of Views</option>
+</select>
+<button id="reverse-menu">Reverse</button>
+  <div id="practiceitems">
+  </div>
+</div>
+</div>
+{% endblock %}
+
+{% block app_script %}PracticeMenuPageApp{% endblock %}
+
+{% block use_script %}PracticeMenuPageApp{% endblock %}
