@@ -1,0 +1,5 @@
+ARTICLE = "article"
+QUESTIONS = "questions"
+OPTIONS = "options"
+CHOICES = "choices"
+DESCRIPTION = "description"

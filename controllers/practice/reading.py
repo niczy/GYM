@@ -1,4 +1,4 @@
-'''from controllers.parameters import ARTICLE
+from controllers.parameters import ARTICLE
 from controllers.parameters import QUESTIONS
 from controllers.parameters import OPTIONS
 from controllers.parameters import DESCRIPTION
@@ -6,7 +6,7 @@ from controllers import render_page
 from controllers import RequestHandler
 from controllers import JSONRequestHandler
 from controllers import require_login
-import json'''
+import json
 
 class ReadingPage(RequestHandler):
     @require_login('/')

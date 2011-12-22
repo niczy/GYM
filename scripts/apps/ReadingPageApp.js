@@ -22,11 +22,9 @@ define(function(require, exports) {
 			});
 
 			readingSectionModel.fetch({"success": function(model, response) {
-
                 console.log("success " + response);
 				readingSectionView.render();
 			}});
-			console.log(readingSectionModel.toJSON());
 		}
 	})
 
