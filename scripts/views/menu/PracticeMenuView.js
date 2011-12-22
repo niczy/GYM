@@ -2,19 +2,19 @@ define(function(require, exports) {
 	var Backbone = require('../../libs/backbone');
 	var _ = require('../../libs/underscore');
 
-	var TestItemView = require('./TestItemView');
+	var PracticeItemView = require('./PracticeItemView');
 	
-	var TestMenuView = Backbone.View.extend({
+	var PracticeMenuView = Backbone.View.extend({
 	render: function() {
 
-		var items = this.model.get('testitems');
-		console.log('testItems: ' + JSON.stringify(items));
+		var items = this.model.get('practiceitems');
+		console.log('practiceitems: ' + JSON.stringify(items));
 		console.log(items);
 		var that = this;
 	    this._itemViews = [];
 	 
 	    items.each(function(item) {
-	      that._itemViews.push(new TestItemView({
+	      that._itemViews.push(new PracticeItemView({
 	        model : item,
 	        tagName : 'li'
 	      }));
@@ -26,11 +26,11 @@ define(function(require, exports) {
 
 		
 		var that = this;
-		var itemsNode = $('#testitems');
+		var itemsNode = $('#practiceitems');
 
 	    // Clear out this element.
 		itemsNode.empty();
-		itemsNode.text("Total: " + this.model.get('testnum') + " Tests.");
+		itemsNode.text("Total: " + this.model.get('practicenum') + " Tests.");
 
 	    // Render each sub-view and append it to the parent view's element.
 	    _(this._itemViews).each(function(iv) {
@@ -40,12 +40,12 @@ define(function(require, exports) {
 		return this;
 	},
 	initialize: function(options) {
-		console.log('TestMenuView.Init');
+		console.log('PracticeMenuView.Init');
 		this.render = _.bind(this.render, this); 
 	    this.model.bind('change', this.render);
         
         return this;
 	}});
-    return TestMenuView;
+    return PracticeMenuView;
 });
 

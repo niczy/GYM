@@ -1,0 +1,84 @@
+.subnav-bar {
+    float: top;
+    width: 100%;
+    //height: 60px;
+    display: block;
+    margin: 10px 0;
+	border-bottom: 1px solid #DDD;
+	
+	.subnav {
+	 	li {
+	    		font-size: 16px;
+	    		display: inline-block;
+			cursor: pointer;
+			margin: 0;
+			padding: 0;
+	    
+		    a {
+		    		color: #666;
+				text-decoration: none;
+				padding: 8px 12px;
+				display: inline-block;
+				margin-bottom: -1px;
+			}
+	       
+	        .selected {
+		        color: #333;
+				font-weight: bold;
+				border-left: 1px solid #DDD;
+				border-top: 1px solid #DDD;
+				border-right: 1px solid #DDD;
+				-webkit-border-top-left-radius: 3px;
+				-webkit-border-top-right-radius: 3px;
+				-moz-border-radius-topleft: 3px;
+				-moz-border-radius-topright: 3px;
+				border-top-left-radius: 3px;
+				border-top-right-radius: 3px;
+				background-color: white;
+	        }
+	    }
+	}
+}
+
+#practice-menu {
+	.item {
+		position: relative;
+		background-color: blue;
+		width: 600px;
+		height: 120px;
+		padding: 5px;
+		margin: 5px;
+		display: block;
+		
+		.uploader {
+		    position: absolute;
+			top: 15px;
+			left: 400px;
+			
+			img {
+				width: 60px;
+				height: 60px;
+			}
+			
+			label {
+				font-color: #AFF;
+			}
+		}
+		
+		.price {
+			position: absolute;
+			top: 30px;
+			left: 250px;
+			
+			label {
+			    font-size: 14px;
+			    font-style: oblique;
+			    
+				span {
+					color: red;
+				    font-size: 20px;  
+				}
+			}
+		}
+	}
+}
