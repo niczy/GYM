@@ -11,14 +11,22 @@ define(function(require, exports) {
 				testid: "4",
 				sectionid: "5"
 			});
-			console.log(readingSectionModel.get('testid'));
-			readingSectionModel.fetch();
+
+			readingSectionModel.bind("change", function() {
+				console.log(readingSectionModel.get("article"));
+			});
 
 			var ReadingSectionView = require('../views/practice/ReadingSectionView');
 			readingSectionView = new ReadingSectionView({
-				model: readingSectionModel 
+				model: readingSectionModel
 			});
-			readingSectionView.render();
+
+			readingSectionModel.fetch({"success": function(model, response) {
+
+                console.log("success " + response);
+				readingSectionView.render();
+			}});
+			console.log(readingSectionModel.toJSON());
 		}
 	})
 
