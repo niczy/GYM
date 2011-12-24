@@ -3,16 +3,22 @@ define(function(require, exports) {
 	var Backbone = require('../../libs/backbone');
 	var ReadingQuestionView = Backbone.View.extend({
 		el: '.practice_section, .question',
+        currentQuestionIdx: 0,
 		render: function() {
-            console.log("ReqdingQuestionView render called" + this.model.get("description"));
+            var readingQuestionModel = this.model.at(this.currentQuestionIdx);
+            if (!readingQuestionModel) {
+                return;
+            }
+            console.log("ReqdingQuestionView render called" + readingQuestionModel.get("description"));
 		//	$(this.el).text(this.model.get("description"));
             var View = new Backbone.View;
-            var description = View.make('p', {classname: "description"}, this.model.get('description'));
+            var description = View.make('p', {class: "description"}, readingQuestionModel.get('description'));
+            $(this.el).empty();
             $(this.el).append(description);
-            var options = View.make('ol', {classname: 'options'});
+            var options = View.make('ol', {class: 'options'});
             var _ = require('../../libs/underscore');
-            _.each(this.model.get("options"), function(op) {
-                $(options).append(View.make('li', {classname: 'option'}, op));
+            _.each(readingQuestionModel.get("options"), function(op) {
+                $(options).append(View.make('li', {class: 'option'}, op));
             });
             $(this.el).append(options);
 			return this;
