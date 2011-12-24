@@ -21,11 +21,12 @@ class Login(RequestHandler):
             render_page(self, 'login_page.html',{'error':True,
                                              'error_msg':error});
     
-    def LogInWithUsernameOrEmail(self, username, password):
+    @staticmethod
+    def LogInWithUsernameOrEmail(handler, username, password):
         #TODO(nice): Implement log in check. (username/password)
         if (username == 'Zero' or username == 'zero@g.com') and password == '123':
             #TODO(zero): Escape username 
-            self.response.headers.add_header('Set-Cookie','username=' + username + '; expires=Sun, 31-May-2999 23:59:59 GMT; path=/;')
+            handler.response.headers.add_header('Set-Cookie','username=' + username + '; expires=Sun, 31-May-2999 23:59:59 GMT; path=/;')
             #self.response.set_cookie('usrename', username, max_age=99999999, path='/', secure=True)
             #self.response.headers['Set-Cookie']
             return None

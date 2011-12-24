@@ -9,7 +9,7 @@ from controllers import require_login
 import json
 
 class ReadingPage(RequestHandler):
-    @require_login('/')
+    @require_login('/landing')
     def get(self, testid, sectionid):
         render_page(self, "reading_page.html", {'testid': testid, "sectionid": sectionid})
 
