@@ -2,6 +2,7 @@ from controllers.parameters import ARTICLE
 from controllers.parameters import QUESTIONS
 from controllers.parameters import OPTIONS
 from controllers.parameters import DESCRIPTION
+from controllers.parameters import OPTION_NUMBER
 from controllers import render_page
 from controllers import RequestHandler
 from controllers import JSONRequestHandler
@@ -26,7 +27,7 @@ class ApiGetReadingSection(JSONRequestHandler):
                                                     },
                                                     
                                                     { DESCRIPTION: " the question description2", 
-                                                OPTIONS: ['option1', 'option2', 'option3', 'option4']
+OPTIONS: ['option1', 'option2', 'option3', 'option4'], OPTION_NUMBER: 2,
                                                     
                                                     }]
                                                     
