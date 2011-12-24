@@ -6,10 +6,10 @@ define(function(require, exports) {
         render: function() {
             var View = new Backbone.View;
             var _ = require('../../libs/underscore');
-            console.log($(this.el));
+            //console.log($(this.el));
             var that = this;
             _.each(this.model.get('paragraphs'), function(paragraph){
-                    $(that.el).append(View.make('p', {classname: "paragraph"}, paragraph));
+                    $(that.el).append(View.make('p', {class: "paragraph"}, paragraph));
                     console.log($(that.el));
                 }
                 );

@@ -50,7 +50,7 @@ app = webapp.WSGIApplication(
                 (r'/speaching', SpeachingPage),
                 (r'/listening', ListeningPage),
                 (r'/api/reading/get', ApiGetReadingSection), 
-                (r'/(.*)/reading/(.*)', ReadingPage),
+                (r'/(.*)/reading/(.*)/', ReadingPage),
                 (r'/landing', LandingPage),
                 (r'/writing', WritingPage),
                 (r'/homepage', HomePage),           
