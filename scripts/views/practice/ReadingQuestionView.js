@@ -1,7 +1,7 @@
 define(function(require, exports) {
 	var $ = require('../../libs/jquery');
 	var Backbone = require('../../libs/backbone');
-    var _ = require('../../libs/underscore');
+	var _ = require('../../libs/underscore');
 	var ReadingQuestionView = Backbone.View.extend({
 
 		el: '.practice_section, .question',
@@ -10,19 +10,24 @@ define(function(require, exports) {
 		},
 		optionCheckbox: [],
 
+		checkedOptions: [],
+
 		currentQuestionIdx: 0,
+
+        getCurrentQuestionModel: function(){
+            return this.model.at(this.currentQuestionIdx);
+        },
 
 		onOptionCheck: function(event) {
 			var targetElement = event.currentTarget;
 			if (targetElement.checked) {
-                var that = this;
-                _.each(this.optionCheckbox, function(option){
-                       if (option.id != targetElement.id) {
-                            option.checked = false;
-                       }
-
-                    });
+				var that = this;
+				while (this.checkedOptions.length >= this.getCurrentQuestionModel().getOptionNumber()) {
+					var el = this.checkedOptions.shift();
+					el.checked = false;
 				}
+				this.checkedOptions.push(targetElement);
+			}
 			console.log("option state chenged");
 		},
 
