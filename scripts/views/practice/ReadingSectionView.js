@@ -1,34 +1,49 @@
 define(function(require, exports) {
 	var Backbone = require('../../libs/backbone');
 	var ReadingSectionView = Backbone.View.extend({
-		el: '.practice-section',
+		el: '.practice-wrapper',
+
+		initialize: function() {
+			var ReadingQuestionView = require('./ReadingQuestionView');
+			this.readingQuestionView = new ReadingQuestionView({
+				model: this.model.readingQuestionCollection
+			});
+
+			var ReadingArticleView = require('./ReadingArticleView');
+			this.readingArticleView = new ReadingArticleView({
+				model: this.model.readingArticleModel
+			});
+		},
+
+		next: function() {
+			this.readingQuestionView.currentQuestionIdx += 1;
+			this.readingQuestionView.render();
+		},
+
+		previous: function() {
+			this.readingQuestionView.currentQuestionIdx -= 1;
+			this.readingQuestionView.render();
+		},
+
+		showQuestion: function(questionIdx) {
+			this.readingQuestionView.currentQuestionIdx = questionIdx;
+			this.readingQuestionView.render();
+		},
+
+		getNextQuestionIdx: function() {
+			return this.readingQuestionView.currentQuestionIdx + 1;
+		},
+
+		getPreviousQuestionIdx: function() {
+			return this.readingQuestionView.currentQuestionIdx - 1;
+		},
+
 		render: function() {
-			var ReadingTemplates = require("../../templates/practice/ReadingTemplates");
 			var $ = require('../../libs/jquery');
 			var view = new Backbone.View;
 
 			console.log("render called");
-			if (this.model.has("article")) {
-				var questions = this.model.get("questions");
-
-				var ReadingQuestionView = require('./ReadingQuestionView');
-				var ReadingQuestionModel = require('../../models/practice/ReadingQuestionModel');
-				var readingQuestionModel = new ReadingQuestionModel({
-					"description": questions[0].description,
-					"options": questions[0].options
-				});
-				this.readingQuestionView = new ReadingQuestionView({
-					model: readingQuestionModel
-				});
-				var ReadingArticleView = require('./ReadingArticleView');
-				var ReadingArticleModel = require('../../models/practice/ReadingArticleModel');
-				var readingArticleModel = new ReadingArticleModel({
-					"paragraphs": this.model.get('article')
-				});
-				this.readingArticleView = new ReadingArticleView({
-					model: readingArticleModel
-				});
-
+			if (this.model.dataFetched){
 				this.readingQuestionView.render();
 				this.readingArticleView.render();
 				console.log("render");

@@ -1,12 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %} 
-<div class="practice-section">
+<div class="practice-wrapper">
+{% include "components/practice_header.html" %}
+    <div class="practice-section">
     <div class="question">
     </div>
     <div class="article">
     </div>
+    </div>
 </div>
+<script type="text/json" id="configData">
+{
+    "testId": {{ testid }},
+    "sectionId": {{ sectionid }} 
+}
+</script>
 {% endblock %}
 
 {% block app_script %}ReadingPageApp{% endblock %}
