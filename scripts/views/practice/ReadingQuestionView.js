@@ -78,6 +78,8 @@ define(function(require, exports) {
 				i++;
 			});
 			$(this.el).append(options);
+            //Trigger the showQuestion event to notify the article view.
+            this.trigger("showQuestion", {questionIdx: this.currentQuestionIdx, question: readingQuestionModel});
 			return this;
 		}
 	});

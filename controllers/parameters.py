@@ -12,3 +12,9 @@ CHOICES = "choices"
 DESCRIPTION = "description"
 
 ANONYMOUS_USER = "ANONYMOUS_USER"
+
+'''
+The question type
+'''
+TYPE = "type"
+INSERTED_SENTENCE = "inserted_sentence"
