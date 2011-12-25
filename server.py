@@ -16,6 +16,7 @@ from controllers.practice.writing import WritingPage
 from controllers.practice.reading import ReadingPage
 from controllers.practice.reading import ApiGetReadingSection
 from controllers.practice.listening import ListeningPage
+from controllers.practice.common_api import ApiStoreAnswer
 from controllers.site.home import HomePage
 from controllers.site.home import TestMenu
 from controllers.site.signup import SignUp
@@ -46,6 +47,7 @@ For questions:
 
 app = webapp.WSGIApplication(
                 [('/', HomePage),
+                (r'/api/update_answer/(.*)/(.*)/(.*)', ApiStoreAnswer),
                 (r'/speaching', SpeachingPage),
                 (r'/listening', ListeningPage),
                 (r'/api/reading/get', ApiGetReadingSection), 

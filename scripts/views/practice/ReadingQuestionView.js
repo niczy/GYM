@@ -27,7 +27,12 @@ define(function(require, exports) {
 					el.checked = false;
 				}
 				this.checkedOptions.push(targetElement);
-			}
+			} else {
+                var elIdx = this.checkedOptions.indexOf(targetElement);
+                if (elIdx >= 0) {
+                    this.checkedOptions.splice(elIdx, 1);
+                }
+            }
 			console.log("option state chenged");
 		},
 
@@ -37,7 +42,7 @@ define(function(require, exports) {
 				return;
 			}
 			//	$(this.el).text(this.model.get("description"));
-			var View = new Backbone.View;
+			var View = new Backbone.View();
 			var description = View.make('p', {
 				class: "description"
 			},

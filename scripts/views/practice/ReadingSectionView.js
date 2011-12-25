@@ -40,7 +40,7 @@ define(function(require, exports) {
 
 		render: function() {
 			var $ = require('../../libs/jquery');
-			var view = new Backbone.View;
+			var view = new Backbone.View();
 
 			console.log("render called");
 			if (this.model.dataFetched){

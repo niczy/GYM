@@ -15,7 +15,7 @@ define(function(require, exports) {
 
 			this.readingSectionModel = new ReadingSectionModel({
 				testid: this.testId,
-				sectionid: this.sectionId,
+				sectionid: this.sectionId
 			});
 
 			var ReadingSectionView = require('../views/practice/ReadingSectionView');
@@ -33,7 +33,7 @@ define(function(require, exports) {
                     });
 		},
 
-    	routes: {
+        routes: {
 			"help": "help",
 			":questionId": "showQuestion"
 
@@ -45,12 +45,10 @@ define(function(require, exports) {
 
 		showQuestion: function(questionId) {
             this.readingSectionView.showQuestion(parseInt(questionId));
-
-			console.log("questionId is " + questionId);
 		}
 	})
 
-	var app = new ReadingPageApp;
+	var app = new ReadingPageApp();
     console.log( "start result is " + 
 	Backbone.history.start({
         root: "/" + app.testId + "/reading/" + app.sectionId + "/"
