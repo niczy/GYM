@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %} 
-<div class="content-wrapper">
+<div class="practicemenu-wrapper">
 {% with 2 as selected %}
 {% include "components/tabs.html" %}
 {% endwith %}
 {% with practice_type as selected %}
 {% include "components/subnav-bar.html" %}
 {% endwith %}
-<div id="practice-menu" name="{{ practice_type }}">
+<div id="practice-menu">
 <label>Order By:</label>
 <select id="menu-order-select">
     <option value="practiceid">Default</option>  
