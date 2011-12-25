@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %} 
+<div class="content-wrapper">
+
+<form action="/feedback" autocomplete="off" method="post" class="form">
+  <div><span>Question Title:</span></div>
+  <input name="title" type="text"></input>
+  <br/>
+  <div><span>Question Detail:</span></div>
+  <textarea name="detail" rows="10"></textarea>
+  <dd id="email_err_msg" class="warning"></dd>
+  <br/>
+  
+  <div><input type="submit" value="Submit" id="submit_button"></div>
+</form>
+
+</div>
+{% endblock %}
+
+{% block app_script %}{% endblock %}
+
+{% block use_script %}{% endblock %}

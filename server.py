@@ -26,7 +26,9 @@ from controllers.site.login import Logout
 from controllers.site.landing import LandingPage
 from controllers.site.practice import PracticeMenuPage
 from controllers.site.practice import PracticeMenu
-
+from controllers.site.faq import FAQPage
+from controllers.site.faq import FAQList
+from controllers.site.feedback import FeedBackPage
 
 '''
 Url ruls:
@@ -61,8 +63,10 @@ app = webapp.WSGIApplication(
                 (r'/logout', Logout),
                 (r'/api/testmenu', TestMenu),
                 (r'/api/practicemenu', PracticeMenu),
+                (r'/api/faqlist', FAQList),
                 (r'/practices', PracticeMenuPage),
-                (r'/practices/(.*)', PracticeMenuPage)],
+                (r'/faq', FAQPage),
+                (r'/feedback', FeedBackPage)],
                 debug=True)
 
 def main():

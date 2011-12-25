@@ -1,7 +1,7 @@
 define(function(require, exports) {
 	var Backbone = require('../../libs/backbone');
 	var PracticeItemModel = Backbone.Model.extend({
-		practiceid: "1",
+		practiceid: 1,
 		title: "READING1",
 		viewer: 15623,
 		uploader: "Zero",
