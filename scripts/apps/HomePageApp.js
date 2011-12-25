@@ -3,15 +3,7 @@ define(function(require, exports) {
 	var $ = require('../libs/jquery');
 	var _ = require('../libs/underscore');
 	require('../action/tabs.js');
-	var test_collection = new Backbone.Collection([
-	                                          {testid: "1", title: "TPO1"},
-	                                          {testid: "2", title: "TPO2"},
-	                                          {testid: "3", title: "TPO3"}
-	                                        ]);
 
-	                                       // alert(JSON.stringify(collection));
-	                                       // collection.each(function(e){alert(JSON.stringify(e))})
-	
 	var HomePageApp = Backbone.Router.extend({
 		reverse : false,
 		initialize: function() {
@@ -22,10 +14,9 @@ define(function(require, exports) {
 				testnum: "23",
 				name: "default",
 				description: "Hello",
-				testitems: test_collection
+				testitems: new Backbone.Collection()
 			});
 			
-			//testMenuModel = new TestMenuModel();
 			testMenuModel.fetch({success:function(){console.log("Success!");}});
 			var testMenuView = new TestMenuView({
 				model: testMenuModel,
@@ -69,7 +60,6 @@ define(function(require, exports) {
 	})
 
 	var app = new HomePageApp;
-
 	console.log('Main inilized.');
 	return HomePageApp;
 });

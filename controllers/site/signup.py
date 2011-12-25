@@ -22,7 +22,8 @@ class SignUp(RequestHandler):
         confirm = self.request.get('confirm')
         msg = SignUp.RegisterUser(username, email, password, confirm)
         if not msg:
-            Login.LogInWithUsernameOrEmail(self, username, password)
+            msg = Login.LogInWithUsernameOrEmail(self, username, password)
+        if not msg:
             self.redirect('/');
         else:
             render_page(self, 'signup_page.html', {'error' : True,
@@ -54,7 +55,7 @@ class SignUpCheck(JSONRequestHandler):
             
         elif check_field == 'email':
             result = 'good'
-        self.Response(result, 'text/plain');
+        self.response_json(result, 'text/plain');
     
     @staticmethod
     def ValidUsername(username):
