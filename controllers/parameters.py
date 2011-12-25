@@ -11,3 +11,4 @@ OPTION_NUMBER = "option_number"
 CHOICES = "choices"
 DESCRIPTION = "description"
 
+ANONYMOUS_USER = "ANONYMOUS_USER"

@@ -13,8 +13,12 @@ define(function(require, exports) {
 		order: "default",
 		description: "This is the practice menu model",
 		practiceitems: PracticeItemCollection,
+		fetched: false,
 		onChange: function() {
+			console.log('PracticeMenuModel.onChange');
+			console.log(this.get('practiceitems'));
 			this.set({ practiceitems : new PracticeItemCollection(this.get('practiceitems')) });
+			console.log(this.get('practiceitems'));
 		},
 		initialize: function() {
 			this.bind('change', this.onChange);
