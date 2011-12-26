@@ -6,8 +6,8 @@ define(function(require, exports) {
 	var ReadingSectionModel = Backbone.Model.extend({
 
 		initialize: function() {
-			this.readingQuestionCollection = new ReadingQuestionCollection;
-			this.readingArticleModel = new ReadingArticleModel;
+			this.readingQuestionCollection = new ReadingQuestionCollection();
+			this.readingArticleModel = new ReadingArticleModel();
             this.dataFetched = false;
 		},
 

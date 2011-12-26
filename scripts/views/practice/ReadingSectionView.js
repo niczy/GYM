@@ -13,6 +13,8 @@ define(function(require, exports) {
 			this.readingArticleView = new ReadingArticleView({
 				model: this.model.readingArticleModel
 			});
+
+			this.readingQuestionView.bind("showQuestion", this.readingArticleView.onQuestionShown, this.readingArticleView);
 		},
 
 		next: function() {
@@ -40,14 +42,12 @@ define(function(require, exports) {
 
 		render: function() {
 			var $ = require('../../libs/jquery');
-			var view = new Backbone.View;
+			var view = new Backbone.View();
 
-			console.log("render called");
-			if (this.model.dataFetched){
-				this.readingQuestionView.render();
+			if (this.model.dataFetched) {
+				// Make sure the article view shown before the question view.
 				this.readingArticleView.render();
-				console.log("render");
-				//$(this.el).text(ReadingTemplates.readingSectionTemplate(this.model.toJSON()));
+				this.readingQuestionView.render();
 			} else {
 				console.log("no article");
 			}
