@@ -7,8 +7,8 @@ define(function(require, exports) {
 	var PracticeMenuView = Backbone.View.extend({
 		render: function() {
 
-			var items = this.model.get('practiceitems');
-			console.log('practiceitems: ' + JSON.stringify(items));
+			var items = this.model.get('items');
+			console.log('items: ' + JSON.stringify(items));
 			console.log(items);
 			var that = this;
 			this._itemViews = [];
@@ -27,7 +27,7 @@ define(function(require, exports) {
 
 			// Clear out this element.
 			itemsNode.empty();
-			itemsNode.text("Total: " + this.model.get('practicenum') + " Tests.");
+			itemsNode.text("Total: " + this.model.get('itemnum') + " Tests.");
 
 			// Render each sub-view and append it to the parent view's element.
 			_(this._itemViews).each(function(iv) {

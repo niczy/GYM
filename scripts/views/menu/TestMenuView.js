@@ -7,7 +7,7 @@ define(function(require, exports) {
 	var TestMenuView = Backbone.View.extend({
 	render: function() {
 
-		var items = this.model.get('testitems');
+		var items = this.model.get('items');
 		console.log('testItems: ' + JSON.stringify(items));
 		console.log(items);
 		var that = this;
@@ -30,7 +30,7 @@ define(function(require, exports) {
 
 	    // Clear out this element.
 		itemsNode.empty();
-		itemsNode.text("Total: " + this.model.get('testnum') + " Tests.");
+		itemsNode.text("Total: " + this.model.get('itemnum') + " Tests.");
 
 	    // Render each sub-view and append it to the parent view's element.
 	    _(this._itemViews).each(function(iv) {
