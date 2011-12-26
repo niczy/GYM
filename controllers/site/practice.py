@@ -18,20 +18,20 @@ class PracticeMenu(JSONRequestHandler):
         practice_type = self.request.get('practice_type');
         
         if practice_type == 'reading':
-            self.response_json('{"practiceitems":['
+            self.response_json('{"items":['
                       '{"practiceid":2,"title":"Barron Reading 1","viewer":1421,"uploader":"KP","uploadTime":"2011-12-03","rating":4.8,"status":"done"},'
                       '{"practiceid":4,"title":"Barron Reading 2","viewer":1542,"uploader":"KP","uploadTime":"2011-11-03","rating":4.0,"status":"new"},'
                       '{"practiceid":5,"title":"Barron Reading 3","viewer":134,"uploader":"KP","uploadTime":"2011-11-03","rating":3.0,"status":"new"}'
 
-                      '],"name":"default","practicenum":"3","description":"From Server Practices."}')
+                      '],"itemnum":"3","description":"From Server Practices."}')
        
         elif practice_type == 'listening':
-             self.response_json('{"practiceitems":['
+             self.response_json('{"items":['
                       '{"practiceid":8,"title":"Barron Listening 1","viewer":1,"uploader":"ETS","uploadTime":"2011-12-03","rating":4.8,"status":"done"},'
                       '{"practiceid":9,"title":"Barron Listening 2","viewer":99999,"uploader":"Zero","uploadTime":"2011-11-03","rating":4.0,"status":"new"},'
                       '{"practiceid":10,"title":"Barron Listening 3","viewer":9,"uploader":"Nic","uploadTime":"2011-11-03","rating":3.0,"status":"new"}'
 
-                      '],"name":"default","practicenum":"3","description":"From Server Practices."}')
+                      '],"itemnum":"3","description":"From Server Practices."}')
        
         else:
             return
