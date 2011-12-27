@@ -4,7 +4,7 @@ define(function(require, exports) {
 
 	var PracticeItemView = require('./PracticeItemView');
 
-	var PracticeMenuView = Backbone.View.extend({
+	/*var PracticeMenuView = Backbone.View.extend({
 		render: function() {
 
 			var items = this.model.get('items');
@@ -43,6 +43,10 @@ define(function(require, exports) {
 
 			return this;
 		}
+	});*/
+	var BaseMenuView = require("./BaseMenuView");
+	var PracticeMenuView = BaseMenuView.extend({
+		itemView: PracticeItemView
 	});
 	return PracticeMenuView;
 });

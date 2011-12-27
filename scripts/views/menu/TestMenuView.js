@@ -4,7 +4,7 @@ define(function(require, exports) {
 
 	var TestItemView = require('./TestItemView');
 	
-	var TestMenuView = Backbone.View.extend({
+	/*var TestMenuView = Backbone.View.extend({
 	render: function() {
 
 		var items = this.model.get('items');
@@ -45,7 +45,12 @@ define(function(require, exports) {
 	    this.model.bind('change', this.render);
         
         return this;
-	}});
+	}});*/
+	var BaseMenuView = require("./BaseMenuView");
+	var TestMenuView = BaseMenuView.extend({
+		itemView: TestItemView,
+		paged: true
+	});
     return TestMenuView;
 });
 
