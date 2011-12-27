@@ -4,9 +4,9 @@ define(function(require, exports) {
 	var BaseMenuModel = Backbone.Model.extend({
 		url: function() {
 		},
-		itemnum: "0",
-		pagenum: "0",
-		pageid: "0",
+		itemnum: 0,
+		pagenum: 0,
+		pageid: 0,
 		order: "default",
 		description: "This is the practice menu model",
 		items: Backbone.Collection,

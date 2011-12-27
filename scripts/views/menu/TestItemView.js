@@ -4,7 +4,7 @@ define(function(require, exports) {
 
 	var TestItemView = Backbone.View.extend({
 	render: function() {
-		console.log('Item::Draw item ' + this.el);
+		console.log('TestItemView::Render item ' + this.el);
         var $ = require('../../libs/jquery');
         
         var compiled = _.template(
@@ -17,6 +17,7 @@ define(function(require, exports) {
         		    <img src="<%= portrait %>"/>\
         		    <label>Uploader: <%= uploader %></label>\
         		  </div>\
+        		  <a href="/testdetail/<%= testid %>">details >>></a>\
         		</div>');
        
         
@@ -26,7 +27,8 @@ define(function(require, exports) {
 			title : this.model.get('title'),
 			portrait : this.model.get('uploaderPortrait'),
 			uploader: this.model.get('uploader'),
-			price: this.model.get('price')
+			price: this.model.get('price'),
+			testid: this.model.get('testid')
 		}));
 
 		return this;

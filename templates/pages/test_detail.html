@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block meta %}
+<meta id="testid" value="{{ testid }}"/>
+{% endblock %}
+
+{% block content %} 
+<div class="testdetail-wrapper">
+{% with 0 as selected %}
+{% include "components/tabs.html" %}
+{% endwith %}
+<div id="test-detail">
+
+  <div id="test-history-list">
+  </div>
+</div>
+</div>
+{% endblock %}
+
+{% block app_script %}TestDetailApp{% endblock %}
+
+{% block use_script %}TestDetailApp{% endblock %}

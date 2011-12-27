@@ -19,6 +19,8 @@ from controllers.practice.listening import ListeningPage
 from controllers.practice.common_api import ApiStoreAnswer
 from controllers.site.home import HomePage
 from controllers.site.home import TestMenu
+from controllers.site.home import TestDetail
+from controllers.site.home import TestHistoryList
 from controllers.site.signup import SignUp
 from controllers.site.signup import SignUpCheck
 from controllers.site.login import Login
@@ -64,9 +66,11 @@ app = webapp.WSGIApplication(
                 (r'/api/testmenu', TestMenu),
                 (r'/api/practicemenu', PracticeMenu),
                 (r'/api/faqlist', FAQList),
+                (r'/api/testhistory', TestHistoryList),
                 (r'/practices', PracticeMenuPage),
                 (r'/faq', FAQPage),
-                (r'/feedback', FeedBackPage)],
+                (r'/feedback', FeedBackPage),
+                (r'/testdetail/(.*)', TestDetail)],
                 debug=True)
 
 def main():
