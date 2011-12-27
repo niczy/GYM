@@ -6,7 +6,6 @@ define(function(require, exports) {
 	require('../controls/tabs.js');
 
 	var HomePageApp = Backbone.Router.extend({
-		reverse : false,
 		initialize: function() {
 			var TestMenuView = require('../views/menu/TestMenuView');
 			var TestMenuModel = require('../models/menu/TestMenuModel');
