@@ -42,7 +42,13 @@ class TestMenu(JSONRequestHandler):
 class TestDetail(RequestHandler):
     @require_login(None)
     def get(self, testid):
-        render_page(self, "test_detail.html", {'testid': testid})
+        #TODO(nice) Get detail information for the test: #testid.
+        # Such as Title, price, user's status of the test etc.
+        render_page(self, "test_detail_page.html",
+            {
+             'testid': testid,
+             'title': '=== TPO 2 ===',
+             'description': 'TPO is the short name for Toefl Practice Online, the practice is made by ETS base on ,,'})
         
 class TestHistoryList(JSONRequestHandler):
     def get(self):
@@ -52,7 +58,6 @@ class TestHistoryList(JSONRequestHandler):
         if pageid == 1:
             self.response_json(json.dumps({
                 "pagenum": 4,
-                "pageid": 1,
                 "items":[
                     {"user": "zx19890827",
                      "date": "2011-12-2"},
@@ -66,7 +71,6 @@ class TestHistoryList(JSONRequestHandler):
         else:
             self.response_json(json.dumps({
                 "pagenum": 4,
-                "pageid": pageid,
                 "items":[
                     {"user": "HAHAHA",
                      "date": "2009-12-2"},

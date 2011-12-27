@@ -17,7 +17,7 @@ define(function(require, exports) {
         		    <img src="<%= portrait %>"/>\
         		    <label>Uploader: <%= uploader %></label>\
         		  </div>\
-        		  <a href="/testdetail/<%= testid %>">details >>></a>\
+        		  <a target="_blank" href="/testdetail/<%= testid %>">details >>></a>\
         		</div>');
        
         
