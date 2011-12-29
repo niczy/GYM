@@ -4,7 +4,7 @@ define(function(require, exports) {
 	var _ = require('../../libs/underscore');
 	var ReadingQuestionView = Backbone.View.extend({
 
-		el: '.practice_section, .question',
+		el: '#question',
 		events: {
 			"change .option input": "onOptionCheck"
 		},

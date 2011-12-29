@@ -18,3 +18,5 @@ The question type
 '''
 TYPE = "type"
 INSERTED_SENTENCE = "inserted_sentence"
+
+HIDE_ARTICLE = "hide_article"
