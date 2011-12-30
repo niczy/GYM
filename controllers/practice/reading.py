@@ -5,6 +5,7 @@ from controllers.parameters import DESCRIPTION
 from controllers.parameters import OPTION_NUMBER
 from controllers.parameters import TYPE
 from controllers.parameters import INSERTED_SENTENCE
+from controllers.parameters import HIDE_ARTICLE
 from controllers import render_page
 from controllers import RequestHandler
 from controllers import JSONRequestHandler
@@ -29,7 +30,7 @@ class ApiGetReadingSection(JSONRequestHandler):
                                                     },
                                                     
                                                     { DESCRIPTION: " the question description2", 
-OPTIONS: ['option1', 'option2', 'option3', 'option4'], OPTION_NUMBER: 2, TYPE: 0
+OPTIONS: ['option1', 'option2', 'option3', 'option4'], OPTION_NUMBER: 2, TYPE: 0, HIDE_ARTICLE: 1
 
                                                     
                                                     },

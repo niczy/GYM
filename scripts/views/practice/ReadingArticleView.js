@@ -9,6 +9,8 @@ define(function(require, exports) {
 			'click .insert-pos': 'insertSentence'
 		},
 
+		el: '#article',
+
 		insertSentence: function(evt) {
             if (this.sentence) {
                 _.each($('.insert-pos'), function(el) {
@@ -36,7 +38,7 @@ define(function(require, exports) {
 			var that = this;
 			this.clearPreviousClass();
 			var type = questionModel.get("type");
-			if (type === 0) {
+			if (type === 0) { //Single choice question
 				_.each(this.gymElements[questionIdx], function(el) {
 					$(el).addClass('bold');
 					if (!that.boldElements) {
@@ -44,17 +46,15 @@ define(function(require, exports) {
 					}
 					that.boldElements.push(el);
 				});
-			} else if (type === 2) {
+			} else if (type === 2) { // The insert question
                 this.sentence = questionModel.get('inserted_sentence');
 				_.each(this.gymElements[questionIdx], function(el) {
 					$(el).addClass('insert-pos');
 					el.textContent = '_';
 				});
-			}
-
+			} 
 			console.log(questionModel);
 		},
-		el: '.practice_section, .article',
 
 		render: function() {
 			var View = new Backbone.View();
