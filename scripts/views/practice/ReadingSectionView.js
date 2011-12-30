@@ -1,8 +1,9 @@
 define(function(require, exports) {
 	var Backbone = require('../../libs/backbone');
+    var $ = require('../../libs/jquery');
 	var ReadingSectionView = Backbone.View.extend({
-		el: '.practice-wrapper',
-
+		el: '#practice-section',
+		
 		initialize: function() {
 			var ReadingQuestionView = require('./ReadingQuestionView');
 			this.readingQuestionView = new ReadingQuestionView({
@@ -15,6 +16,20 @@ define(function(require, exports) {
 			});
 
 			this.readingQuestionView.bind("showQuestion", this.readingArticleView.onQuestionShown, this.readingArticleView);
+			this.readingQuestionView.bind("showQuestion", this.onQuestionShown, this);
+		},
+
+		onQuestionShown: function(data) {
+            var questionModel = data.question;
+
+			var hideArticle = questionModel.get("hide_article");
+			if (hideArticle) {
+				$(this.el).removeClass("practice-section");
+				$(this.el).addClass("practice-section-no-article");
+			} else {
+				$(this.el).removeClass("practice-section-no-article");
+				$(this.el).addClass("practice-section");
+			}
 		},
 
 		next: function() {

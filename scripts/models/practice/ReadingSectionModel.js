@@ -12,7 +12,7 @@ define(function(require, exports) {
 		},
 
 		url: function() {
-			return "/api/reading/get";
+			return "/api/get/" + this.get('testid') + "/reading/" + this.get('sectionid');
 		},
 
 		parse: function(response) {
