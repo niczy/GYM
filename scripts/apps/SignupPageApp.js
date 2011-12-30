@@ -1,3 +1,3 @@
-seajs.use('action/signup', function(signup) {
+seajs.use('controls/signup', function(signup) {
 	signup.init();
 });
