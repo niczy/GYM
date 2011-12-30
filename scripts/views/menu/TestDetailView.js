@@ -2,14 +2,10 @@ define(function(require, exports) {
 	var Backbone = require('../../libs/backbone');
 	var _ = require('../../libs/underscore');
 	var $ = require('../../libs/jquery');
+	var Templates = require('../../templates/site/TestPageTemplates');
 	var TestHistoryItemView = Backbone.View.extend({
 		render: function() {
-	        var compiled = _.template(
-	        		'<div>\
-	        		  <h3>Username: <%= user %></h3>\
-	        		  <br/>\
-	        		  <h3>Used on: <%= date %></h3>\
-	        		</div>');
+	        var compiled = Templates.testHistoryItem;
 
 			$(this.el).html(compiled({
 				user : this.model.get('user'),

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %} 
+<div class="account-page-wrapper">
+{% with 1 as selected %}
+{% include "components/tabs.html" %}
+{% endwith %}
+
+<div id="user-info">
+ <div>Username: {{ username }}</div>
+ <div>Email: {{ email }}</div>
+ <div>Credit: <span class='credit'>$ {{ credit }}</span></div>
+ <div>Registered on: {{ registered_date }}</div>
+</div>
+
+<div id="test-history">
+<span>Test history</span>
+  <div id="test-history-list"></div>
+</div>
+
+</div>
+{% endblock %}
+
+{% block app_script %}AccountPageApp{% endblock %}
+
+{% block use_script %}AccountPageApp{% endblock %}
