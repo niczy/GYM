@@ -22,6 +22,9 @@ from controllers.site.home import HomePage
 from controllers.site.home import TestMenu
 from controllers.site.home import TestDetail
 from controllers.site.home import TestHistoryList
+from controllers.site.account import AccountPage
+from controllers.site.account import UserHistoryList
+from controllers.site.userinfo import UserInfoPage
 from controllers.site.signup import SignUp
 from controllers.site.signup import SignUpCheck
 from controllers.site.login import Login
@@ -69,10 +72,13 @@ app = webapp.WSGIApplication(
                 (r'/api/practicemenu', PracticeMenu),
                 (r'/api/faqlist', FAQList),
                 (r'/api/testhistory', TestHistoryList),
+                (r'/api/userhistory', UserHistoryList),
                 (r'/practices', PracticeMenuPage),
                 (r'/faq', FAQPage),
                 (r'/feedback', FeedBackPage),
-                (r'/testdetail/(.*)', TestDetail)],
+                (r'/testdetail/(.*)', TestDetail),
+                (r'/account', AccountPage),
+                (r'/userinfo/(.*)', UserInfoPage)],
                 debug=True)
 
 def main():
