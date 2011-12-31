@@ -6,7 +6,7 @@ Created on Dec 28, 2011
 from controllers import render_page
 from controllers import require_login
 from controllers import RequestHandler
-import json
+from django.utils import simplejson as json
 
 class UserInfoPage(RequestHandler):
     '''
