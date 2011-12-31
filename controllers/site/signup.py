@@ -32,11 +32,12 @@ class SignUp(RequestHandler):
     @staticmethod
     def RegisterUser(username, email, password, confirm):
         #TODO(nice): Register user, return error message. return None if success
-        if username and email and password and confirm and \
-        SignUpCheck.ValidUsername(username) and confirm == password:
-            return None
-        else:
-            return "Register Failed!"       
+        
+        msg = SignUpCheck.ValidateUsername(username)
+        if msg: return msg
+        msg = SignUpCheck.ValidatePassword(password, confirm)
+        if msg: return msg
+        return None   
         
     
 class SignUpCheck(JSONRequestHandler):
@@ -48,18 +49,28 @@ class SignUpCheck(JSONRequestHandler):
         value = self.request.get('value')
         result = ''
         if check_field == 'username':
-            if SignUpCheck.ValidUsername(value):
+            result = SignUpCheck.ValidateUsername(value)
+            if not result:
                 result = 'good'
-            else:
-                result = 'User name too short!'
-            
+
         elif check_field == 'email':
             result = 'good'
         self.response_json(result, 'text/plain');
     
+    #TODO(nice): Username validation. Return None if it's valid, else return error message
     @staticmethod
-    def ValidUsername(username):
-        return len(username) > 3
+    def ValidateUsername(username):
+        if len(username) < 4:
+            return 'Username Too Short! At least 4 characters'
+        return None
     
+    #TODO(nice): Password validation. Return None if it's valid, else return error message
+    @staticmethod
+    def ValidatePassword(password, confirm):
+        if password != confirm:
+            return "Password and confirmation are not equal! Please check again"
+        if len(password) < 6:
+            return "Password too short. At least 6 characters"
+        return None
     
         

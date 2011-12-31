@@ -23,6 +23,8 @@ from controllers.site.home import TestMenu
 from controllers.site.home import TestDetail
 from controllers.site.home import TestHistoryList
 from controllers.site.account import AccountPage
+from controllers.site.account import ResetPassword
+from controllers.site.account import SetNewPassword
 from controllers.site.account import UserHistoryList
 from controllers.site.userinfo import UserInfoPage
 from controllers.site.signup import SignUp
@@ -78,7 +80,9 @@ app = webapp.WSGIApplication(
                 (r'/feedback', FeedBackPage),
                 (r'/testdetail/(.*)', TestDetail),
                 (r'/account', AccountPage),
-                (r'/userinfo/(.*)', UserInfoPage)],
+                (r'/userinfo/(.*)', UserInfoPage),
+                (r'/resetpassword', ResetPassword),
+                (r'/setnewpassword/(.*)', SetNewPassword)],
                 debug=True)
 
 def main():

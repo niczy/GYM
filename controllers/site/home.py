@@ -7,8 +7,7 @@ from controllers import render_page
 from controllers import require_login
 from controllers import RequestHandler
 from controllers import JSONRequestHandler
-import json
-
+from django.utils import simplejson as json
 
 class HomePage(RequestHandler):
     @require_login('/landing')

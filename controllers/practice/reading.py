@@ -10,7 +10,7 @@ from controllers import render_page
 from controllers import RequestHandler
 from controllers import JSONRequestHandler
 from controllers import require_login
-import json
+from django.utils import simplejson as json
 
 class ReadingPage(RequestHandler):
     @require_login('/landing')

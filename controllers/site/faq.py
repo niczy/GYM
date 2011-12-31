@@ -8,7 +8,7 @@ from controllers import require_login
 from controllers import RequestHandler
 from controllers import JSONRequestHandler
 from controllers.parameters import ANONYMOUS_USER
-import json
+from django.utils import simplejson as json
 
 class FAQPage(RequestHandler):
     '''
