@@ -7,7 +7,7 @@ from controllers.parameters import TYPE
 from controllers.parameters import INSERTED_SENTENCE
 from controllers.parameters import HIDE_ARTICLE
 from controllers import JSONRequestHandler
-import json
+from django.utils import simplejson as json
 
 class ApiStoreAnswer(JSONRequestHandler):
     
