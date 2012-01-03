@@ -7,3 +7,6 @@ dev :
 	rm gym.less ;
 	dev_appserver.py . ;
 
+test:
+	nosetests --with-gae --without-sandbox
+
