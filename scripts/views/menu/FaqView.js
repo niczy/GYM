@@ -4,9 +4,7 @@ define(function(require, exports) {
 	var $ = require('../../libs/jquery');
 	var FaqItemView = Backbone.View.extend({
 		render: function() {
-			console.log('Item::Draw Faq item ' + this.el);
-	        var $ = require('../../libs/jquery');
-	        
+			console.log('Item::Draw Faq item ' + this.el);	        
 	        var compiled = _.template(
 	        		'<div>\
 	        		  <h3><%= question %></h3>\
