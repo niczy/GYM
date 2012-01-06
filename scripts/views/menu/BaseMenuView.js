@@ -27,6 +27,14 @@ define(function(require, exports) {
 	    // Render each sub-view and append it to the parent view's element.
 	    _(this._itemViews).each(function(iv) {
 	    		$(theView.el).append(iv.render().el);
+	    		if (typeof(theView.itemClick) != "undefined") {
+	    			$(iv.el).click(function() {
+	    				console.log("Item OnClick!");
+	    				theView.itemClick(iv.model);
+	    			});
+	    			console.log("Bind item click for:");
+	    			console.log(iv.el);
+	    		}
 	    });
 		
 	    if (this.paged) {
@@ -61,6 +69,9 @@ define(function(require, exports) {
 	initialize: function(options) {
 		console.log('BaseMenuView.Init');
 		//this.itemView = options.itemView;
+		if (typeof(options.itemClick) !== 'undefined') {
+			this.itemClick = options.itemClick;
+		}
 		this.render = _.bind(this.render, this); 
 	    this.model.bind('change', this.render);
         return this;
