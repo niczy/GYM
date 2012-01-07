@@ -2,3 +2,4 @@ controllers/*.pyc
 *.pyc
 static/*
 *.swp
+.*
