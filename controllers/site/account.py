@@ -22,10 +22,10 @@ class AccountPage(RequestHandler):
         #TODO(nice): Get user info for the user: self.username
         user = users.GetUserByUsernameOrEmail(self.username)
         render_page(self, "account_page.html", {
-            'username': user['username'],
-            'email': user['email'],
-            'credit': user['credit'],
-            'registered_date': user['registered_date']
+            'username': user.username,
+            'email': user.email,
+            'credit': user.credit,
+            'registered_date': user.register_date
             })
         
         
