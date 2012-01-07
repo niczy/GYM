@@ -10,7 +10,8 @@ define(function(require, exports) {
 		uploaderPortrait: "/asd/asd",
 		rating: 3.8,
 		price: 0,
-		status: "done"
+		status: "done",
+		lastUseTime: "2012-1-1"
 	});
 	return TestItemModel;
 });
