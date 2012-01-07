@@ -1,6 +1,7 @@
 import os
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
+from models import users
 
 TEMPLAGE_DIR = "templates/"
 PAGE_DIR = TEMPLAGE_DIR + "pages/"
@@ -23,6 +24,12 @@ def require_login(url):
     def login_check(fn):
         def Get(self, *args):
             self.username = self.request.cookies.get('username')
+            if self.username:
+                key = self.request.cookies.get('key')
+                expected_key = users.GetUserCookieKey(self.username)
+                if key != expected_key:
+                    self.username = None
+                    
             if self.username == None and url != None:
                 self.redirect(url)
                 return

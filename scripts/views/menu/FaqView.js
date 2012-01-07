@@ -8,6 +8,8 @@ define(function(require, exports) {
 	        var compiled = _.template(
 	        		'<div>\
 	        		  <h3><%= question %></h3>\
+	        		  <span>post by: <%= username %></span>\
+	        		  <span> On: <%= date %></span>\
 	        		  <br/>\
 	        		  <h3><%= answer %></h3>\
 	        		</div>');
@@ -16,7 +18,9 @@ define(function(require, exports) {
       	//$(this.el).text("Title: " + this.model.get('title'));
 			$(this.el).html(compiled({
 				question : this.model.get('question'),
-				answer : answer
+				answer : answer,
+				date : this.model.get('date'),
+				username : this.model.get('user')
 			}));
 			return this;
 		},

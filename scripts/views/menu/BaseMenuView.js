@@ -28,9 +28,9 @@ define(function(require, exports) {
 	    _(this._itemViews).each(function(iv) {
 	    		$(theView.el).append(iv.render().el);
 	    		if (typeof(theView.itemClick) != "undefined") {
-	    			$(iv.el).click(function() {
-	    				console.log("Item OnClick!");
-	    				theView.itemClick(iv.model);
+	    			$(iv.el).click(function(event) {
+	    				console.log("From BaseView: Item OnClick!");
+	    				theView.itemClick(iv.model, event);
 	    			});
 	    			console.log("Bind item click for:");
 	    			console.log(iv.el);
