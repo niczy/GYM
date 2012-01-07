@@ -49,7 +49,7 @@ define(function(require, exports) {
 	var BaseMenuView = require("./BaseMenuView");
 	var TestMenuView = BaseMenuView.extend({
 		itemView: TestItemView,
-		paged: true
+		paged: false
 	});
     return TestMenuView;
 });

@@ -71,6 +71,7 @@ define(function(require, exports) {
 		    $('#buy').click(function() {
 	    			window.location = '/buycredit';
 		    });
+		    
 		    $(this.el).show();
 			return this;
 		},

@@ -24,7 +24,10 @@ define(function(require, exports) {
 			theApp.startTestDialog = new StartTestDialog({
 				el: '#start-test-dialog'
 			});
-			theApp.testItemClick = function(testItemModel) {
+			theApp.testItemClick = function(testItemModel, event) {
+				if (event.target.nodeName == 'A') {
+					return;
+				}
 				theApp.startTestDialog.render({
 					price: testItemModel.get('price'),
 					credit: 99,
