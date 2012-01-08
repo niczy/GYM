@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section id="234234" type="reading">
+    <article>
+        <paragraph>
+            <![CDATA[this is prargra<gym reference-id=1>ph</gym> 1]]>
+        </paragraph>
+        <paragraph>
+            <![CDATA[this is prargra<gym reference-id=2>ph</gym> 1]]>
+        </paragraph>
+    <article>
+    <questions>
+
+        <question id="questin-1" type="choice" option-num=2 hide-article=false >
+            <description>
+                <![CDATA[This is the desciption]]>
+            </description>
+            <options>
+                <option answer=true>
+                    <![CDATA[This is the option1]]>
+                </option>
+                <option answer=true>
+                    <![CDATA[This is the option2]]>
+                </option>
+
+                <option>
+                    <![CDATA[This is the option3]]>
+                </option>
+            </options>
+        </question>
+
+        <question id="question-2" type="insert" hide-article=true >
+            <description>
+                <![CDATA[This is the desciption]]>
+            </description>
+            <sentence insert-place=1>
+                <![CDATA[This is the sentence]]>
+            </sentence>
+        </question>
+
+        <question id="question-3" type="insert" hide-article=true >
+            <description>
+                <![CDATA[This is the desciption]]>
+            </description>
+            <categories>
+                <category>
+                    <![CDATA[This is the desciption]]>
+                </category>
+                <category>
+                    <![CDATA[This is the desciption]]>
+                </category>
+            <categories>
+            <options>
+                <option category=0>
+                    <![CDATA[This is the option1]]>
+                </option>
+                <option category=0>
+                    <![CDATA[This is the option2]]>
+                </option>
+                <option category=1>
+                    <![CDATA[This is the option3]]>
+                </option>
+            </options>
+        </question>
+    </questions>
+</section>
+
