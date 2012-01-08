@@ -53,7 +53,7 @@ class SetNewPassword(RequestHandler):
                 expired = True
             else:
                 username = user.username
-        render_page(self, "set_password_page.html", {'username': username, 'expired': expired, 'error': error, 'msg': msg})
+        render_page(self, "set_password_page.html", {'expired': expired, 'error': error, 'msg': msg})
 
     def post(self, link):
         user = users.CheckPasswordResetLink(link)
