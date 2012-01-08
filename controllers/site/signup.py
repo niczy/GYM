@@ -36,7 +36,6 @@ class SignUpCheck(JSONRequestHandler):
         pass
     
     def post(self, check_field):
-        #TODO(nice): Validate username and email, length/RE/existed
         value = self.request.get('value')
         result = ''
         if check_field == 'username':
@@ -45,7 +44,9 @@ class SignUpCheck(JSONRequestHandler):
                 result = 'good'
 
         elif check_field == 'email':
-            result = 'good'
+            result = users.ValidateEmail(value)
+            if not result:
+                result = 'good'
         self.response_json(result, 'text/plain');
     
 

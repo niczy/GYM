@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section id="1001" type="speaking" sub-type="first" >
+    <description>
+		<![CDATA[Describe the city you live in.]]>
+    </description>
+</section>
+
+<section id="1002" type="speaking" sub-type="second" >
+    <description>
+		<![CDATA[Some one likes to work in China while some one likes to transfer to U.S.
+		 		 State your opinion and the reasons for holding that opinion.]]>
+    </description>
+</section>
+
+<section id="1003" type="speaking" sub-type="third" >
+	<narrator-audio>
+		<![CDATA[speaking-1003-narrator.mp3]]>
+	</narrator-audio>
+	<paragraph>
+		<![CDATA[<title>Stanford's Announcement</title>
+		         The stanford's grad admission office had announced that ......]]>
+	</paragraph>
+	<audio>
+		<![CDATA[speaking-1003-audio.mp3]]>
+	</audio>
+	<background>
+		<![CDATA[speaking-1003-backgournd.png]]>
+	</background>
+    <description>
+		<![CDATA[The man expressed his opinion of the announcement, state his opnion
+		         and the reasons he gave for holding that opinion.]]>
+    </description>
+</section>
+
+<section id="1004" type="speaking" sub-type="forth" >
+	<narrator-audio>
+		<![CDATA[speaking-1004-narrator.mp3]]>
+	</narrator-audio>
+	<paragraph>
+		<![CDATA[<title>Animal Domestication</title>
+				For thousand of years, humans have been able to domesticate animals,
+				....]]>
+	</paragraph>
+	<audio>
+		<![CDATA[speaking-1004-audio.mp3]]>
+	</audio>
+	<background>
+		<![CDATA[speaking-1004-backgournd.png]]>
+	</background>
+    <description>
+		<![CDATA[The professor describes the behaviour of horses and antelope in herds,
+		  	 	Explain how their behaviour is related to their suitability of domestication.]]>
+    </description>
+</section>
+
+<section id="1005" type="speaking" sub-type="fifth" >
+	<audio>
+		<![CDATA[speaking-1005-audio.mp3]]>
+	</audio>
+	<background>
+		<![CDATA[speaking-1005-background.png]]>
+	</background>
+    <description>
+		<![CDATA[The student discuss two possible solutions to the woman's problem.
+				Discribe the problem. Then state which of the two solutions you prefer and explain why.]]>
+    </description>
+</section>
+
+<section id="1006" type="speaking" sub-type="sixth" >
+	<narrator-audio>
+		<![CDATA[speaking-1006-narrator.mp3]]>
+	</narrator-audio>
+	<audio>
+		<![CDATA[speaking-1006-audio.mp3]]>
+	</audio>
+	<background>
+		<![CDATA[speaking-1006-background.png]]>
+	</background>
+    <description>
+		<![CDATA[Using points and examples from the talk, explain how the automobile and the radio
+				contributed to a common culture in the United States.]]>
+    </description>
+</section>

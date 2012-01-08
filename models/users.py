@@ -52,6 +52,7 @@ def SetPasswordResetLink(user, link):
 
 # There should be a deadline for the link.
 def CheckPasswordResetLink(link):
+    if len(link) < 10: return None
     users = db.GqlQuery("SELECT * FROM User WHERE password_reset_link = :1", link)
     for user in users: return user
     return None
@@ -98,18 +99,6 @@ def RegisterUser(username, email, password, confirm):
     user.put()
     return None #Success!
 
-def LogInWithUsername(username, hashed_password):
-    users = db.GqlQuery("SELECT * FROM User WHERE username = :1 AND password = :2", username, hashed_password)
-    user = users.get()
-    if not user: return False
-    return True
-
-def LogInWithEmail(email, hashed_password):
-    users = db.GqlQuery("SELECT * FROM User WHERE email = :1 AND password = :2", email, hashed_password)
-    user = users.get()
-    if not user: return False
-    return True
-
 def GetUserCookieKey(uoe):
     hashed = hashlib.md5()
     hashed.update(USER_COOKIE_HASH_KEY + uoe)
@@ -117,9 +106,10 @@ def GetUserCookieKey(uoe):
     
 def LogInWithUsernameOrEmail(handler, uoe, password):
     hashed_password = HashPassword(password)
-    if LogInWithUsername(uoe, hashed_password) or LogInWithEmail(uoe, hashed_password):
-        cookie_key = GetUserCookieKey(uoe)
-        handler.response.headers.add_header('Set-Cookie','username=' + uoe + '; expires=Sun, 31-May-2999 23:59:59 GMT; path=/;')
+    user = GetUserByUsernameOrEmail(uoe)
+    if user and user.password == hashed_password:
+        cookie_key = GetUserCookieKey(user.username)
+        handler.response.headers.add_header('Set-Cookie','username=' + user.username + '; expires=Sun, 31-May-2999 23:59:59 GMT; path=/;')
         handler.response.headers.add_header('Set-Cookie','key=' + cookie_key + '; expires=Sun, 31-May-2999 23:59:59 GMT; path=/;')
         return None #Success!
     return 'Username/email Don''t exist or password is wrong!' #Failed!
@@ -132,6 +122,8 @@ def ValidateUsername(username):
     for c in username:
         if not ValidUsernameChar(c):
             return 'Must consists of english charactors, underscore or digits'
+    if GetUserByUsernameOrEmail(username):
+        return 'User Existed!'
     return None
 
 def ValidatePassword(password, confirm):
@@ -139,7 +131,12 @@ def ValidatePassword(password, confirm):
         return "Password and confirmation are not equal! Please check again"
     if len(password) < 6:
         return "Password too short. At least 6 characters"
+    
     return None
     
 def ValidateEmail(email):
+    if not re.match(".+@.+\..+", email):
+        return 'Email wrong format!'
+    if GetUserByUsernameOrEmail(email):
+        return 'Email already in use!'
     return None
