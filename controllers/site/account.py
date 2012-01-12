@@ -20,7 +20,7 @@ class AccountPage(RequestHandler):
     @require_login('/landing')
     def get(self):
         #TODO(nice): Get user info for the user: self.username
-        user = users.GetUserByUsernameOrEmail(self.username)
+        user = users.get_user_by_username_or_email(self.username)
         render_page(self, "account_page.html", {
             'username': user.username,
             'email': user.email,
@@ -29,8 +29,7 @@ class AccountPage(RequestHandler):
             })
         
         
-class UserHistoryList(JSONRequestHandler):
-    
+class UserHistoryList(JSONRequestHandler): 
     @require_login('/landing')
     def get(self):
         #TODO(nice): return a list of tests done by this user: self.username.
@@ -48,7 +47,7 @@ class SetNewPassword(RequestHandler):
     def get(self, link, expired=False, error=False, msg=''):
         username = ''
         if expired == False:
-            user = users.CheckPasswordResetLink(link)
+            user = users.check_password_reset_link(link)
             if user == None:
                 expired = True
             else:
@@ -56,17 +55,17 @@ class SetNewPassword(RequestHandler):
         render_page(self, "set_password_page.html", {'expired': expired, 'error': error, 'msg': msg})
 
     def post(self, link):
-        user = users.CheckPasswordResetLink(link)
+        user = users.check_password_reset_link(link)
         password = self.request.get('password')
         confirm = self.request.get('confirm')
         expired = False
         error = False
         msg = ''
         if user:
-            msg = users.ValidatePassword(password, confirm)
+            msg = users.validate_password(password, confirm)
             if not msg:
-                users.ResetUserPassword(user, password)
-                users.ClearPasswordResetLink(user)
+                users.reset_user_password(user, password)
+                users.clear_password_reset_link(user)
                 self.redirect('/login')
             else: 
                 error = True
@@ -80,21 +79,21 @@ class ResetPassword(RequestHandler):
     
     def post(self):
         uoe = self.request.get('uoe')
-        user = users.GetUserByUsernameOrEmail(uoe)
+        user = users.get_user_by_username_or_email(uoe)
         msg = ''
         success = False
         if user == None:
             msg = 'User doesn\'t exist'
         else:
-            link = users.CreatePasswordResetLink(user)
-            users.SetPasswordResetLink(user, link)
-            self.SendPasswordResetEmail(user, link)
+            link = users.create_password_reset_link(user)
+            users.set_password_reset_link(user, link)
+            self.send_password_reset_email(user, link)
             success = True
             msg = 'The password reset link has been sent to you by email.'
         render_page(self, "get_password_page.html", {'msg': msg, 'success': success})
 
     @staticmethod
-    def SendPasswordResetEmail(user, link):
+    def send_password_reset_email(user, link):
         #TODO(Zero): Change the link to the actual domain
         body = 'Click the following link to reset your password:\n http://localhost:8083/setnewpassword/%s\n' % link
         

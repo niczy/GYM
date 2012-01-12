@@ -8,6 +8,7 @@ from controllers.parameters import INSERTED_SENTENCE
 from controllers.parameters import HIDE_ARTICLE
 from controllers import JSONRequestHandler
 from django.utils import simplejson as json
+from models.common import get_section
 
 class ApiStoreAnswer(JSONRequestHandler):
     
@@ -18,6 +19,12 @@ class ApiStoreAnswer(JSONRequestHandler):
     def get(self, testid, section_type, sectionid, questionid):
         return self.post(testid, section_type, sectionid, questionid)
 
+class ApiGetSectionById(JSONRequestHandler):
+    def get(self, sectionid):
+        section = get_section(sectionid)
+        if section == None: return
+        self.response_json(json.dumps(section))
+    
 class ApiGetSection(JSONRequestHandler):
 
     def get(self, testid, section_type, sectionid):

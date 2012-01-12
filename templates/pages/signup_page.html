@@ -6,11 +6,11 @@
 {% endif %}
 <form action="/signup" autocomplete="off" method="post" class="form">
   <div><span>User Name:</span></div>
-  <input name="username" type="text" check-url="/signup_check/username" err-msg="username_err_msg"></input>
+  <input name="username" type="text" check-url="/signup_check/username" err-msg="username_err_msg" value="{{ username }}"></input>
   <dd id="username_err_msg" class="warning"></dd>
   <br/>
   <div><span>Email Address:</span></div>
-  <input name="email" type="text" check-url="/signup_check/email" err-msg="email_err_msg"></input>
+  <input name="email" type="text" check-url="/signup_check/email" err-msg="email_err_msg" value="{{ email }}"></input>
   <dd id="email_err_msg" class="warning"></dd>
   <br/>
   <div><span>Password:</span></div>
