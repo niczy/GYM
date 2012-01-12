@@ -18,6 +18,7 @@ from controllers.practice.reading import ApiGetReadingSection
 from controllers.practice.listening import ListeningPage
 from controllers.practice.common_api import ApiStoreAnswer
 from controllers.practice.common_api import ApiGetSection
+from controllers.practice.common_api import ApiGetSectionById
 from controllers.site.home import HomePage
 from controllers.site.home import TestMenu
 from controllers.site.home import TestDetail
@@ -32,6 +33,7 @@ from controllers.site.signup import SignUpCheck
 from controllers.site.login import Login
 from controllers.site.login import Logout
 from controllers.site.landing import LandingPage
+from controllers.site.upload import UploadPage
 from controllers.site.practice import PracticeMenuPage
 from controllers.site.practice import PracticeMenu
 from controllers.site.faq import FAQPage
@@ -59,7 +61,8 @@ app = webapp.WSGIApplication(
                 [('/', HomePage),
                 (r'/api/update_answer/(.*)/(reading|writing|speaking|listening)/(.*)/(.*)', ApiStoreAnswer),
 
-                (r'/api/get/(.*)/(reading|writing|speaking|listening)/(.*)', ApiGetSection), 
+                (r'/api/get/(.*)/(reading|writing|speaking|listening)/(.*)', ApiGetSection),
+                (r'/api/getsectionbyid/(.*)', ApiGetSectionById),
                 (r'/speaching', SpeachingPage),
                 (r'/listening', ListeningPage),
                 (r'/(.*)/reading/(.*)/', ReadingPage),
@@ -82,7 +85,8 @@ app = webapp.WSGIApplication(
                 (r'/account', AccountPage),
                 (r'/userinfo/(.*)', UserInfoPage),
                 (r'/resetpassword', ResetPassword),
-                (r'/setnewpassword/(.*)', SetNewPassword)],
+                (r'/setnewpassword/(.*)', SetNewPassword),
+                (r'/upload', UploadPage)],
                 debug=True)
 
 def main():

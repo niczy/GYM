@@ -20,12 +20,14 @@ class SignUp(RequestHandler):
         email = self.request.get('email')
         password = self.request.get('password')
         confirm = self.request.get('confirm')
-        msg = users.RegisterUser(username, email, password, confirm)
+        msg = users.register_user(username, email, password, confirm)
         if msg:
             render_page(self, 'signup_page.html', {'error' : True,
-                                                   'error_msg' : msg})
+                                                   'error_msg' : msg,
+                                                   'username' : username,
+                                                   'email': email})
             return
-        msg = users.LogInWithUsernameOrEmail(self, username, password)
+        msg = users.login_with_username_or_email(self, username, password)
         if not msg:
             self.redirect('/');
         else:
@@ -39,12 +41,12 @@ class SignUpCheck(JSONRequestHandler):
         value = self.request.get('value')
         result = ''
         if check_field == 'username':
-            result = users.ValidateUsername(value)
+            result = users.validate_username(value)
             if not result:
                 result = 'good'
 
         elif check_field == 'email':
-            result = users.ValidateEmail(value)
+            result = users.validate_email(value)
             if not result:
                 result = 'good'
         self.response_json(result, 'text/plain');

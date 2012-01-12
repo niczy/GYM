@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %} 
+<div class="upload-wrapper">
+{% if error %}
+<div class="error">{{ error_msg }}</div>
+{% endif %}
+{% with 3 as selected %}
+{% include "components/tabs.html" %}
+{% endwith %}
+
+  <form method="post">
+    <div><span>XML:</span></div>
+    <div><input type="submit" value="Submit"></div>
+    <select name="type">
+     <option value="listening">Listening</option>
+     <option value="reading">Reading</option>
+     <option value="speaking">Speaking</option>
+     <option value="writing">Writing</option>
+    </select>
+    <textarea name="xml" type="text" cols="80" rows="180"></textarea>
+  </form>
+  	
+{% endblock %}
+
+{% block app_script %}{% endblock %}
+
+{% block use_script %}{% endblock %}

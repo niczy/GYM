@@ -26,7 +26,7 @@ def require_login(url):
             self.username = self.request.cookies.get('username')
             if self.username:
                 key = self.request.cookies.get('key')
-                expected_key = users.GetUserCookieKey(self.username)
+                expected_key = users.get_user_cookie_key(self.username)
                 if key != expected_key:
                     self.username = None
                     

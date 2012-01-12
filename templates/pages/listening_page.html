@@ -1,9 +1,21 @@
-<html>
-<body>
-<audio controls="controls">
+{% extends "base.html" %}
 
-  <source src="/static/audio/Apologize.mp3" type="audio/mp3" />
-  Your browser does not support the audio tag.
-</audio>
-</body>
-</html>
+{% block content %} 
+<div class="practice-wrapper">
+{% include "components/practice_header.html" %}
+    <div id="practice-section" class="practice-section">
+    <audio controls="controls">
+ 	  <source src="/static/audio/Apologize.mp3" type="audio/mp3" />
+  	  Your browser does not support the audio tag.
+	</audio>
+    <div id="question">
+    </div>
+    <div id="article">
+    </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block app_script %}ListeningPageApp{% endblock %}
+
+{% block use_script %}ListeningPageApp{% endblock %}

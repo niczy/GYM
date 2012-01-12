@@ -6,8 +6,8 @@
     <background>
         <![CDATA[listening798.png]]>
     </background>
-    <questions>
-		<question type="choice" option-num=1 play-audio=false>
+
+		<question type="choice" option-num="1" play-audio="false">
             <description>
                 <![CDATA[What is the lecture mainly about?]]>
             </description>
@@ -18,28 +18,28 @@
                 <option>
                     <![CDATA[How to get an offer from Stanford.]]>
                 </option>
-                <option answer=true>
+                <option answer="true">
                     <![CDATA[How to get hired by Google.]]>
                 </option>
         		</options>
         </question>
-        <question type="choice" option-num=2 play-audio=false >
+        <question type="choice" option-num="2" play-audio="false" >
             <description>
                 <![CDATA[What is mentioned as a prerequisite of being a Googler?]]>
             </description>
             <options>
-                <option answer=true>
+                <option answer="true">
                     <![CDATA[Know MapReduce.]]>
                 </option>
                 <option>
                     <![CDATA[Know SQL and C# well.]]>
                 </option>
-                <option answer=true>
+                <option answer="true">
                     <![CDATA[Algorithm.]]>
                 </option>
         		</options>
         </question>
-        <question type="choice" option-num=1 play-audio=true >
+        <question type="choice" option-num="1" play-audio="true" >
         		<audio>
 				<![CDATA[listening798-question2.mp3]]>
     			</audio>
@@ -50,7 +50,7 @@
                 <option>
                     <![CDATA[Google is easy to get in.]]>
                 </option>
-                <option answer=true>
+                <option answer="true">
                     <![CDATA[Google is the best place to work.]]>
                 </option>
                 <option>
@@ -58,6 +58,6 @@
                 </option>
             </options>
         </question>
-    </questions>
+
 </section>
 

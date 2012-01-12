@@ -23,55 +23,55 @@ class User(db.Model):
 
 #Get user's info by username or email.
 #return None if not found
-def GetUserByUsernameOrEmail(uoe):
+def get_user_by_username_or_email(uoe):
     users = db.GqlQuery("SELECT * FROM User WHERE username = :1", uoe)
     for user in users: return user
     users = db.GqlQuery("SELECT * FROM User WHERE email = :1", uoe)
     for user in users: return user
     return None
 
-def MD5(unhased):
+def get_md5(unhased):
     hashed = hashlib.md5()
     hashed.update(unhased)
     return hashed.hexdigest()
  
  
-def UserExisted(uoe):
-    user = GetUserByUsernameOrEmail(uoe)
+def user_existed(uoe):
+    user = get_user_by_username_or_email(uoe)
     if user == None: return False
     return True
 
-def HashPassword(password):
-    return MD5(password + PASSWORD_HASH_KEY)
+def hash_password(password):
+    return get_md5(password + PASSWORD_HASH_KEY)
    
 # There should be a deadline for the link.
-def SetPasswordResetLink(user, link):
+def set_password_reset_link(user, link):
     user.password_reset_link = link
     user.put()
     pass
 
 # There should be a deadline for the link.
-def CheckPasswordResetLink(link):
+def check_password_reset_link(link):
     if len(link) < 10: return None
     users = db.GqlQuery("SELECT * FROM User WHERE password_reset_link = :1", link)
     for user in users: return user
     return None
 
-def ClearPasswordResetLink(user):
+def clear_password_reset_link(user):
     user.password_reset_link = ''
     user.put()
 
-def CreatePasswordResetLink(user):
+def create_password_reset_link(user):
     num = random.random()
-    link = MD5(str(num))
+    link = get_md5(str(num))
     return link
 
-def ResetUserPassword(user, password):
-    hased_password = HashPassword(password)
+def reset_user_password(user, password):
+    hased_password = hash_password(password)
     user.password = hased_password
     user.put()
    
-def ValidUsernameChar(char):
+def valid_username_char(char):
     if char >= 'a' and char <= 'z': return True
     if char >= 'A' and char <= 'Z': return True
     if char == '_': return True
@@ -79,18 +79,18 @@ def ValidUsernameChar(char):
     return False
     
 # Register user, return error message if failed. return None if success
-def RegisterUser(username, email, password, confirm):
+def register_user(username, email, password, confirm):
     if password != confirm:
         return 'Password and confirm not equal!'
-    msg = ValidateUsername(username)
+    msg = validate_username(username)
     if msg: return msg
-    msg = ValidatePassword(password, confirm)
+    msg = validate_password(password, confirm)
     if msg: return msg
-    if UserExisted(username):
+    if user_existed(username):
         return 'Username had been used!'
-    if UserExisted(email):
+    if user_existed(email):
         return 'Email had been used!'  
-    hashed_password = HashPassword(password)
+    hashed_password = hash_password(password)
     user = User(username=username,
                email=email,
                password=hashed_password,
@@ -99,34 +99,34 @@ def RegisterUser(username, email, password, confirm):
     user.put()
     return None #Success!
 
-def GetUserCookieKey(uoe):
+def get_user_cookie_key(uoe):
     hashed = hashlib.md5()
     hashed.update(USER_COOKIE_HASH_KEY + uoe)
     return hashed.hexdigest()
     
-def LogInWithUsernameOrEmail(handler, uoe, password):
-    hashed_password = HashPassword(password)
-    user = GetUserByUsernameOrEmail(uoe)
+def login_with_username_or_email(handler, uoe, password):
+    hashed_password = hash_password(password)
+    user = get_user_by_username_or_email(uoe)
     if user and user.password == hashed_password:
-        cookie_key = GetUserCookieKey(user.username)
+        cookie_key = get_user_cookie_key(user.username)
         handler.response.headers.add_header('Set-Cookie','username=' + user.username + '; expires=Sun, 31-May-2999 23:59:59 GMT; path=/;')
         handler.response.headers.add_header('Set-Cookie','key=' + cookie_key + '; expires=Sun, 31-May-2999 23:59:59 GMT; path=/;')
         return None #Success!
     return 'Username/email Don''t exist or password is wrong!' #Failed!
 
-def ValidateUsername(username):
+def validate_username(username):
     if len(username) < 4:
         return 'Username Too Short! At least 4 characters'
     if len(username) > 20:
         return 'Username Too Long! At most 20 characters'
     for c in username:
-        if not ValidUsernameChar(c):
+        if not valid_username_char(c):
             return 'Must consists of english charactors, underscore or digits'
-    if GetUserByUsernameOrEmail(username):
+    if get_user_by_username_or_email(username):
         return 'User Existed!'
     return None
 
-def ValidatePassword(password, confirm):
+def validate_password(password, confirm):
     if password != confirm:
         return "Password and confirmation are not equal! Please check again"
     if len(password) < 6:
@@ -134,9 +134,9 @@ def ValidatePassword(password, confirm):
     
     return None
     
-def ValidateEmail(email):
+def validate_email(email):
     if not re.match(".+@.+\..+", email):
         return 'Email wrong format!'
-    if GetUserByUsernameOrEmail(email):
+    if get_user_by_username_or_email(email):
         return 'Email already in use!'
     return None
