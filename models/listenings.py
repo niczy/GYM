@@ -35,7 +35,7 @@ class ListeningSection(Section):
             "type": self.sectiontype,
             "audio": self.audio,
             "background": self.background,
-            "questions": json.load(self.questions_json)
+            "questions": json.loads(self.questions_json)
         }
 
     def from_obj(self, obj):
