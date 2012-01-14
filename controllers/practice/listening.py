@@ -1,6 +1,7 @@
 from controllers import render_page
 from controllers import require_login
 from controllers import RequestHandler
+from django.utils import simplejson as json
 
 class ListeningPage(RequestHandler):
 

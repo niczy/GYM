@@ -15,7 +15,7 @@ class Login(RequestHandler):
     def post(self):
         username = self.request.get('username')
         password = self.request.get('password')
-        error = users.LogInWithUsernameOrEmail(self, username, password)
+        error = users.login_with_username_or_email(self, username, password)
         if not error:
             self.redirect("/")
         else:
