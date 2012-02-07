@@ -27,6 +27,7 @@ class SignUp(RequestHandler):
                                                    'username' : username,
                                                    'email': email})
             return
+        
         msg = users.login_with_username_or_email(self, username, password)
         if not msg:
             self.redirect('/');
