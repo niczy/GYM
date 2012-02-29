@@ -7,7 +7,7 @@
     </reading>
 
     <listening>
-    		<section id="798"/>
+        <section id="798"/>
         <section id="799"/>
         <section id="780"/>
         <section id="781"/>
@@ -16,7 +16,7 @@
     </listening>
     
     <speaking>
-    		<section id="1001"/>
+        <section id="1001"/>
         <section id="1002"/>
         <section id="1003"/>
         <section id="1004"/>
@@ -25,7 +25,7 @@
     </speaking>
 
     <writing>
-    		<section id="784"/>
-    		<section id="785"/>
+        <section id="784"/>
+        <section id="785"/>
     </writing>
 </test>

@@ -7,53 +7,53 @@
         <![CDATA[listening798.png]]>
     </background>
 
-		<question type="choice" option-num="1" play-audio="false">
-            <description>
-                <![CDATA[What is the lecture mainly about?]]>
-            </description>
-                <option>
-                    <![CDATA[How to get higher scores in TOEFL test.]]>
-                </option>
-                <option>
-                    <![CDATA[How to get an offer from Stanford.]]>
-                </option>
-                <option answer="true">
-                    <![CDATA[How to get hired by Google.]]>
-                </option>
-        </question>
-        <question type="choice" option-num="2" play-audio="false" >
-            <description>
-                <![CDATA[What is mentioned as a prerequisite of being a Googler?]]>
-            </description>
-                <option answer="true">
-                    <![CDATA[Know MapReduce.]]>
-                </option>
-                <option>
-                    <![CDATA[Know SQL and C# well.]]>
-                </option>
-                <option answer="true">
-                    <![CDATA[Algorithm.]]>
-                </option>
-        </question>
-        <question type="choice" option-num="1" play-audio="true" >
-        		<audio>
-				<![CDATA[listening798-question2.mp3]]>
-    			</audio>
-            <description>
-                <![CDATA[What does the HR mean when she says this?]]>
-            </description>
-            <options>
-                <option>
-                    <![CDATA[Google is easy to get in.]]>
-                </option>
-                <option answer="true">
-                    <![CDATA[Google is the best place to work.]]>
-                </option>
-                <option>
-                    <![CDATA[Google and Microsoft are similar companies.]]>
-                </option>
-            </options>
-        </question>
+    <question type="choice" option-num="1" play-audio="false">
+        <description>
+            <![CDATA[What is the lecture mainly about?]]>
+        </description>
+        <option>
+            <![CDATA[How to get higher scores in TOEFL test.]]>
+        </option>
+        <option>
+            <![CDATA[How to get an offer from Stanford.]]>
+        </option>
+        <option answer="true">
+            <![CDATA[How to get hired by Google.]]>
+        </option>
+    </question>
+    <question type="choice" option-num="2" play-audio="false" >
+        <description>
+            <![CDATA[What is mentioned as a prerequisite of being a Googler?]]>
+        </description>
+        <option answer="true">
+            <![CDATA[Know MapReduce.]]>
+        </option>
+        <option>
+            <![CDATA[Know SQL and C# well.]]>
+        </option>
+        <option answer="true">
+            <![CDATA[Algorithm.]]>
+        </option>
+    </question>
+    <question type="choice" option-num="1" play-audio="true" >
+        <audio>
+        <![CDATA[listening798-question2.mp3]]>
+        </audio>
+        <description>
+            <![CDATA[What does the HR mean when she says this?]]>
+        </description>
+        <options>
+            <option>
+                <![CDATA[Google is easy to get in.]]>
+            </option>
+            <option answer="true">
+                <![CDATA[Google is the best place to work.]]>
+            </option>
+            <option>
+                <![CDATA[Google and Microsoft are similar companies.]]>
+            </option>
+        </options>
+    </question>
 
 </section>
 

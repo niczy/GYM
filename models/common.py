@@ -21,19 +21,6 @@ def get_section(id):
     return None
     
 class Section(polymodel.PolyModel):
-    id = db.StringProperty(indexed=True)
+    sectionid = db.StringProperty(indexed=True)
     sectiontype = db.StringProperty()
-
-    def to_json(self):
-        return json.dumps(self.to_obj())
-    
-    def to_obj(self):
-        return {
-            "id": self.sectionid,
-            "type": self.sectiontype
-        }
-    
-    def from_obj(self, obj):
-        self.id = obj['id']
-        self.sectiontype = obj['type']
 

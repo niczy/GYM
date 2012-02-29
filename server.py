@@ -19,6 +19,8 @@ from controllers.practice.listening import ListeningPage
 from controllers.practice.common_api import ApiStoreAnswer
 from controllers.practice.common_api import ApiGetSection
 from controllers.practice.common_api import ApiGetSectionById
+from controllers.practice.common_api import ApiCreateTest
+from controllers.practice.common_api import ApiCreateSection
 from controllers.site.home import HomePage
 from controllers.site.home import TestMenu
 from controllers.site.home import TestDetail
@@ -63,6 +65,8 @@ app = webapp.WSGIApplication(
 
                 (r'/api/get/(.*)/(reading|writing|speaking|listening)/(.*)', ApiGetSection),
                 (r'/api/getsectionbyid/(.*)', ApiGetSectionById),
+                (r'/api/createtest', ApiCreateTest),
+                (r'/api/createsection', ApiCreateSection),
                 (r'/speaching', SpeachingPage),
                 (r'/listening', ListeningPage),
                 (r'/(.*)/reading/(.*)/', ReadingPage),

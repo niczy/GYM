@@ -44,9 +44,9 @@ define(function(require, exports) {
 		},
 
 		showQuestion: function(questionId) {
-            this.readingSectionView.showQuestion(parseInt(questionId));
+            this.readingSectionView.showQuestion(parseInt(questionId, 10));
 		}
-	})
+	});
 
 	var app = new ReadingPageApp();
     console.log( "start result is " + 

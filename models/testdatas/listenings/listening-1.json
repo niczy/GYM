@@ -1,0 +1,25 @@
+{
+    "type": "listening",
+    "sectionid" : "343432",
+    "background": "listening-343-main.png",
+    "audio": "listening3434-main.mp3",
+
+    "questions": [
+            {
+                "description": "what is the lecture mainly about",
+                "option_num": 1,
+                "options": ["option1", "option2", "option4", "option4"]
+            },
+
+            {
+                "description": "what is the lecture mainly about",
+                "option_num": 1,
+                "audio": "question-audio.mp3",
+                "options": ["option1", "option2", "option4", "option4"]
+            }
+
+
+
+        ]
+
+}
