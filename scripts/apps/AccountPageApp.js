@@ -41,7 +41,7 @@ define(function(require, exports) {
 			theView.render();
 		}
 	});
-	var app = new AccountPageApp;
+	var app = new AccountPageApp();
 	console.log('Main inilized.');
 	return AccountPageApp;
 });

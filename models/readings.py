@@ -4,41 +4,32 @@ from django.utils import simplejson as json
 from models.common import Section
 from models.utils import TEXT_DATA
 
-def save_reading_section(obj):
-    section = ReadingSection()
-    #for k in obj:
-    #    section.__setattr__(k, obj[k])
-    #section.__dict__ = obj
-    section.from_obj(obj)
-    section.put()
-    return None # return error msg
-
-def get_reading_section(id):
-    if id == None:
-        return None;
-    sections = db.GqlQuery("SELECT * FROM ReadingSection WHERE sectionid = :1", id)
-    for section in sections:
-        return section.to_obj()
-    return None
-
 class ReadingSection(Section):
-    article_json = db.TextProperty()
-    questions_json = db.TextProperty()
+    article = db.TextProperty()
+    questions = db.TextProperty()
  
-    def to_json(self):
+    def to_json_str(self):
         return json.dumps(self.to_obj())
 
     def to_obj(self):
         return {
-            "id": self.id,
-            "type": self.sectiontype,
-            "article": json.loads(self.article_json),
-            "questions": json.loads(self.questions_json)
+            "sectionid": self.sectionid,
+            "type": "reading",
+            "article":  json.loads(self.article),
+            "questions": json.loads(self.questions)
         }
 
-    def from_obj(self, obj):
-        self.id = obj['id']
-        self.sectiontype = obj['type']
-        self.article_json = json.dumps(obj['article'])
-        self.questions_json = json.dumps(obj['question'])
-        
+    @classmethod
+    def from_dict(cls, dict_instance):
+        return ReadingSection(sectionid =dict_instance.get('sectionid'),
+                article                 = json.dumps(dict_instance.get('article')),
+                questions               = json.dumps(dict_instance.get('questions')))
+
+
+if __name__ == '__main__':
+    f = open('models/testdatas/readings/reading-1.json')
+    obj = json.loads(f.read())
+    reading_section = ReadingSection.from_dict(obj)
+    print reading_section.to_json_str()
+
+

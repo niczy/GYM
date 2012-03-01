@@ -63,3 +63,13 @@ class JSONRequestHandler(webapp.RequestHandler):
     def response_json(self, json, type='application/json'):
         self.response.headers['Content-Type'] = type
         self.response.out.write(json)
+
+    def response_json_failed(self, msg = None):
+        if msg:
+            response_json(self, '{"result":"failed", "msg": %s}', msg)
+        else:
+            response_json(self, '{"result":"failed"}')
+
+    def response_json_succeed(self):
+        self.response_json('{"result":"succeed"}')
+

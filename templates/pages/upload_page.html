@@ -8,21 +8,16 @@
 {% with 3 as selected %}
 {% include "components/tabs.html" %}
 {% endwith %}
+<div id="create_test">
 
-  <form method="post">
-    <div><span>XML:</span></div>
-    <div><input type="submit" value="Submit"></div>
-    <select name="type">
-     <option value="listening">Listening</option>
-     <option value="reading">Reading</option>
-     <option value="speaking">Speaking</option>
-     <option value="writing">Writing</option>
-    </select>
-    <textarea name="xml" type="text" cols="80" rows="180"></textarea>
-  </form>
+</div>
+
+<div id="create_section">
+    Create a section from here
+</div>
   	
 {% endblock %}
 
-{% block app_script %}{% endblock %}
+{% block app_script %}UploadPageApp{% endblock %}
 
-{% block use_script %}{% endblock %}
+{% block use_script %}UploadPageApp{% endblock %}

@@ -33,9 +33,9 @@ def node_to_dict(parent):
     
     return obj
     
-def xml_to_obj(xml):
+def xml_to_obj(xml, root_tag_name):
     dom = parseString(xml)
-    roots = dom.getElementsByTagName("section")
+    roots = dom.getElementsByTagName(root_tag_name)
     #root = dom.getDocumentElement()
     objs = []
     for root in roots:
