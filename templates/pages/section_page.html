@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %} 
+<div class="practice-wrapper">
+{% include "components/practice_header.html" %}
+    <div id="practice-section" class="practice-section">
+    </div>
+</div>
+{% autoescape off%}
+<script type="text/json" id="configData">
+    {{ config_data }}
+</script>
+{% endautoescape %}
+{% endblock %}
+
+{% block app_script %}SectionPageApp{% endblock %}
+
+{% block use_script %}SectionPageApp{% endblock %}

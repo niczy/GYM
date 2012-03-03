@@ -12,7 +12,7 @@ class SpeakingSection(Section):
     paragraph = db.TextProperty()
     audio = db.StringProperty()
     background = db.StringProperty()
- 
+    
     def to_json_str(self):
         return json.dumps(self.to_obj())
 
@@ -29,12 +29,24 @@ class SpeakingSection(Section):
 
     @classmethod
     def from_dict(cls, dict_instance):
-        return SpeakingSection(sectionid =dict_instance.get('sectionid'),
+        speaking_section = Section.get_by_sectionid(dict_instance.get('sectionid'))
+        if speaking_section:
+            speaking_section.description = dict_instance.get('description')
+            speaking_section.narrator_audio = dict_instance.get('narrator_audio')
+            speaking_section.paragraph = dict_instance.get('paragraph')
+            speaking_section.audio = dict_instance.get('audio')
+            speaking_section.background = dict_instance.get('background')
+            speaking_section.sectiontype = 'speaking'
+            return speaking_section
+        return SpeakingSection(
+                key_name = dict_instance.get('sectionid'),
+                sectionid =dict_instance.get('sectionid'),
                 description = dict_instance.get('description'),
                 narrator_audio = dict_instance.get('narrator_audio'),
                 paragraph = dict_instance.get('paragraph'),
                 audio = dict_instance.get('audio'),
-                background = dict_instance.get('background'))
+                background = dict_instance.get('background'),
+                sectiontype = 'speaking')
 
 
 if __name__ == '__main__':

@@ -44,15 +44,10 @@ class RequestHandler(webapp.RequestHandler):
         self.template_values = {
         }
 
-    def Render(self, template_path, custom_template_values={}):
+    def render_page(self, page_name, custom_template_values={}):
         template_values = self.template_values;
         template_values.update(custom_template_values)
-        file_path = os.path.join(os.path.dirname(__file__),
-                                 os.path.pardir,
-                                 os.path.pardir,
-                                 'templates',
-                                 template_path);
-        self.response.out.write(template.render(file_path, template_values))
+        self.response.out.write(template.render(PAGE_DIR + page_name, template_values))
 
 class JSONRequestHandler(webapp.RequestHandler):
     def __init__(self):
@@ -66,9 +61,9 @@ class JSONRequestHandler(webapp.RequestHandler):
 
     def response_json_failed(self, msg = None):
         if msg:
-            response_json(self, '{"result":"failed", "msg": %s}', msg)
+            self.response_json('{"result":"failed", "msg": %s}', msg)
         else:
-            response_json(self, '{"result":"failed"}')
+            self.response_json('{"result":"failed"}')
 
     def response_json_succeed(self):
         self.response_json('{"result":"succeed"}')
