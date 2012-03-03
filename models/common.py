@@ -24,3 +24,7 @@ class Section(polymodel.PolyModel):
     def to_json_str(self):
         pass
 
+    @classmethod
+    def get_by_sectionid(cls, sectionid):
+        section_key = db.Key.from_path('Section', sectionid)
+        return db.get(section_key)

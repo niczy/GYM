@@ -7,6 +7,7 @@ from controllers.parameters import TYPE
 from controllers.parameters import INSERTED_SENTENCE
 from controllers.parameters import HIDE_ARTICLE
 from controllers import JSONRequestHandler
+from controllers import RequestHandler
 from models.common import Section
 from models.readings import ReadingSection
 from models.listenings import ListeningSection
@@ -31,9 +32,7 @@ class ApiGetSection(JSONRequestHandler):
 
     def get(self, sectionid):
         logging.info("section id is " + sectionid)
-        q = Section.all()
-        q.filter('sectionid = ', sectionid)
-        section = q.get()
+        section = Section.get_by_sectionid(sectionid)
         if section:
             self.response_json(section.to_json_str())
         else:
@@ -65,6 +64,8 @@ class ApiCreateSection(JSONRequestHandler):
         section_dict = json.loads(json_str)
         if section_dict['type'] == 'reading':
             reading_section = ReadingSection.from_dict(section_dict)
+ 
+            logging.info("Section type is " + str(reading_section.sectiontype))
             reading_section.put()
         elif section_dict['type'] == 'listening':
             listening_section = ListeningSection.from_dict(section_dict)
@@ -76,5 +77,23 @@ class ApiCreateSection(JSONRequestHandler):
             writing_section = WritingSection.from_dict(section_dict)
             writing_section.put()
         else: 
-            response_json_failed()
+            JSONRequestHandler.response_json_failed(self)
         JSONRequestHandler.response_json_succeed(self)
+
+class PageSection(RequestHandler):
+
+    def get(self, sectionid):
+        logging.info("PageSection sectionid is " + sectionid)
+        section = Section.get_by_sectionid(sectionid)
+        if section:
+            self.render_page("section_page.html", {"config_data": json.dumps({"sectionid": sectionid, "type": section.sectiontype})})
+        else:
+            self.response.out.write('page not found')
+
+class PageTest(RequestHandler):
+
+    def get(self, testid):
+        logging.info("PageTest testid is " + testid)
+        self.render_page('test_page.html', {'testid': testid})
+
+

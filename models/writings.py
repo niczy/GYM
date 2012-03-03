@@ -8,14 +8,14 @@ class WritingSection(Section):
     description = db.TextProperty()
     passage = db.TextProperty()
     lecture = db.StringProperty()
- 
+
     def to_json_str(self):
         return json.dumps(self.to_obj())
 
     def to_obj(self):
         return {
             "sectionid": self.sectionid,
-            "type": "reading",
+            "type": "writing",
             "description":  self.description,
             "lecture": self.lecture,
             "passage": self.passage
@@ -23,10 +23,20 @@ class WritingSection(Section):
 
     @classmethod
     def from_dict(cls, dict_instance):
-        return WritingSection(sectionid =dict_instance.get('sectionid'),
+        writing_section = Section.get_by_sectionid(dict_instance.get('sectionid'))
+        if writing_section:
+            writing_section.description = dict_instance.get('description')
+            writing_section.passage = dict_instance.get('passage')
+            writing_section.lecture = dict_instance.get('lecture')
+            writing_section.sectiontype = 'writing'
+            return writing_section
+        return WritingSection(
+                key_name = dict_instance.get('sectionid'),
+                sectionid =dict_instance.get('sectionid'),
                 description = dict_instance.get('description'),
                 passage = dict_instance.get('passage'),
-                lecture = dict_instance.get('lecture'))
+                lecture = dict_instance.get('lecture'),
+                sectiontype = 'writing')
 
 
 if __name__ == '__main__':

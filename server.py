@@ -14,12 +14,13 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 from controllers.practice.speaching import SpeachingPage
 from controllers.practice.writing import WritingPage
 from controllers.practice.reading import ReadingPage
-from controllers.practice.reading import ApiGetReadingSection
+from controllers.practice.common import PageSection 
+from controllers.practice.common import PageTest
 from controllers.practice.listening import ListeningPage
-from controllers.practice.common_api import ApiStoreAnswer
-from controllers.practice.common_api import ApiGetSection
-from controllers.practice.common_api import ApiCreateTest
-from controllers.practice.common_api import ApiCreateSection
+from controllers.practice.common import ApiStoreAnswer
+from controllers.practice.common import ApiGetSection
+from controllers.practice.common import ApiCreateTest
+from controllers.practice.common import ApiCreateSection
 from controllers.site.home import HomePage
 from controllers.site.home import TestMenu
 from controllers.site.home import TestDetail
@@ -65,11 +66,9 @@ app = webapp.WSGIApplication(
                 (r'/api/getsection/(.*)', ApiGetSection),
                 (r'/api/createtest', ApiCreateTest),
                 (r'/api/createsection', ApiCreateSection),
-                (r'/speaching', SpeachingPage),
-                (r'/listening', ListeningPage),
-                (r'/(.*)/reading/(.*)/', ReadingPage),
+                (r'/test/(.*)', PageTest),
+                (r'/section/(.*)', PageSection),
                 (r'/landing', LandingPage),
-                (r'/writing', WritingPage),
                 (r'/homepage', HomePage),           
                 (r'/signup_check/(.*)', SignUpCheck),
                 (r'/signup', SignUp),
