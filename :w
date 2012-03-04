@@ -1,0 +1,14 @@
+define(function(require, exports) {
+        var Backbone = require('../../libs/backbone');
+        var _ = require('../../libs/underscore');
+        var SectionView = Backbone.View.extend({
+                initialize : function() {
+
+                }
+                } 
+
+
+            );
+
+
+        });

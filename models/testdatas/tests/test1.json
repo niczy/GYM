@@ -1,6 +1,6 @@
 {
-    "id": "1",
-    "readings": ["798", 799"],
+    "testid": "1",
+    "readings": ["798", "799"],
     "listenings":["800", "801"],
     "speakings":["802", "803"],
     "writings":["804", "805"]

@@ -16,6 +16,7 @@ define(function(require, exports) {
 		},
 
 		parse: function(response) {
+            console.log(response);
             this.readingQuestionCollection.add(response.questions);
             this.readingArticleModel.set({"paragraphs": response.article});
             this.dataFetched = true;

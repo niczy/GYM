@@ -2,12 +2,12 @@ define(function(require, exports) {
 
 	var Backbone = require('../libs/backbone');
 
-	var SectionPageApp = Backbone.Router.extend({
+	var TestPageApp = Backbone.Router.extend({
 		initialize: function() {
 			var $ = require('../libs/jquery');
 			var data = JSON.parse($('#configData').html());
-			this.sectionid = data.sectionid;
-            this.type = data.type;
+            this.test = data; 
+            console.log("got test info" + data);
             var SectionView = require('../views/practice/SectionView');
             this.sectionView = new SectionView({
                     sectionid : this.sectionid,

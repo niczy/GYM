@@ -9,6 +9,7 @@ from controllers.parameters import HIDE_ARTICLE
 from controllers import JSONRequestHandler
 from controllers import RequestHandler
 from models.common import Section
+from models.test import TestModel
 from models.readings import ReadingSection
 from models.listenings import ListeningSection
 from models.speakings import SpeakingSection
@@ -37,10 +38,14 @@ class ApiGetSection(JSONRequestHandler):
             self.response_json(section.to_json_str())
         else:
             return
+
+    def post(self, sectionid):
+        self.get(sectionid)
  
 class ApiCreateTest(JSONRequestHandler):
 
     def get(self):
+        logging.info('test is ' + self.request.get('test'))
         test_json = json.loads(self.request.get('test'))
         test_model = TestModel.from_dict(test_json)
         test_model.put()
@@ -94,6 +99,7 @@ class PageTest(RequestHandler):
 
     def get(self, testid):
         logging.info("PageTest testid is " + testid)
-        self.render_page('test_page.html', {'testid': testid})
+        test = TestModel.get_by_testid(testid)
+        self.render_page('test_page.html', {"config_data": test.to_json_str()})
 
 

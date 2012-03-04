@@ -12,9 +12,8 @@ define(function(require, exports) {
 		},
 
 		submitTest: function() {
-            console.log($('#test_xml').val());
             console.log('submit test called.');
-            $.post('/api/createtest', {'test': $('#test_xml').val()}, function(data) {
+            $.post('/api/createtest', {'test': $('#test_data').val()}, function(data) {
                         console.log('return data is ' + data.result); 
                     });
 
