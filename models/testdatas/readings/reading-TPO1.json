@@ -1,0 +1,134 @@
+{
+    "sectionid": "TPO1",
+    "type":"reading",
+    "title":"GOUNDWATER",
+    "article": [
+        "Groundwater is the word used to describe water that saturates the ground, filling all the available spaces. By far the most abundant type of groundwater is meteoric water; this is the groundwater that circulates as part of the water cycle. Ordinary meteoric water is water that has soaked into the ground from the surface, from precipitation (rain and snow) and from lakes and streams. There it remains, sometimes for long periods, before emerging at the surface again. At first thought it seems <gym reference-id='1' type='highlight'>incredible</gym> that there can be enough space in the \"solid\" ground underfoot to hold all this water.", 
+        "The necessary space is there, however, in many forms. The commonest spaces are those among the particles—sand grains and tiny pebbles—of loose, unconsolidated sand and gravel. Beds of this material, <gym reference-id='2' type='highlight'>out of sight</gym> beneath the soil, are common. They are found wherever fast rivers carrying loads of coarse sediment once flowed. For example, as the great ice sheets that covered North America during the last ice age steadily melted away, huge volumes of water flowed from them. The water was always laden with pebbles, gravel, and sand, known as <gym reference-id='4' type='highlight'>glacial outwash</gym>, that was deposited as the flow slowed down.", 
+        "The same thing happens to this day, though on a smaller scale, wherever a sediment-laden river or stream emerges from a mountain valley onto relatively flat land, dropping its load as the current slows: the water usually spreads out fanwise, depositing the sediment in the form of a smooth, fan-shaped slope. Sediments are also dropped where a river slows on entering a lake or the sea, the deposited sediments are on a lake floor or the seafloor at first, but will be located inland at some future date, when the sea level falls or the land rises; such beds are sometimes thousands of meters thick.",
+        "In lowland country almost any spot on the ground may <gym reference-id='6' type='highlight'>overlie</gym> what was once the bed of a river that has since become buried by soil; if they are now below the water’s upper surface (the water table), the gravels and sands of the former riverbed, and its sandbars, will be saturated with groundwater.",
+        "<gym reference-id='7' type='highlight'>So much for</gym> unconsolidated sediments. Consolidated (or cemented) sediments, too, contain millions of minute water-holding pores. This is because the gaps among the original grains are often not totally <gym reference-id='8' type='highlight'>plugged</gym> with cementing chemicals; also, parts of the original grains may become dissolved by percolating groundwater, either while consolidation is taking place or at any time afterwards. The result is that sandstone, for example, can be as porous as the loose sand from which it was formed.",
+        "Thus a proportion of the total volume of any sediment, loose or cemented, consists of empty space. Most crystalline rocks are much more solid; a common exception is basalt, a form of solidified volcanic lava, which is sometimes full of tiny bubbles that make it very porous.",
+        "The proportion of empty space in a rock is known as its porosity. But note that porosity is not the same as permeability, which measures the ease with which water can flow through a material; this depends on the sizes of the individual cavities and the crevices linking them.",
+        "Much of the water in a sample of water-saturated sediment or rock will drain from it if the sample is put in a suitable dry place.<gym reference-id='12' type='insert'></gym> But some will remain, clinging to all solid surfaces.<gym reference-id='12' type='insert'></gym> It is held there by the force of surface tension without which water would drain instantly from any wet surface, leaving it totally dry.<gym reference-id='12' type='insert'></gym> The total volume of water in the saturated sample must therefore be thought of as consisting of water that can, and water that cannot, drain away.<gym reference-id='12' type='insert'></gym>",
+        "The relative amount of these two kinds of water varies greatly from one kind of rock or sediment to another, even though their porosities may be the same. What happens depends on pore size. <gym reference-id='11' type='highlight'>If the pores are large, the water in them will exist as drops too heavy for surface tension to hold, and it will drain away; but if the pores are small enough, the water in them will exist as thin films, too light to overcome the force of surface tension holding them in place; then the water will be firmly held.</gym>"
+            ], 
+    "questions": [
+	    {"type": "choice",
+	     "description": "Which of the following can be inferred from paragraph 1 about the ground that we walk on?",
+	     "options": [
+	       {"text":"It cannot hold rainwater for long periods of time."},
+	       {"text":"It prevents most groundwater from circulating."},
+	       {"text":"It has the capacity to store large amounts of water.","answer":"true"},
+	       {"text":"It absorbs most of the water it contains from rivers."}
+	      ]},
+	     {"type": "choice",
+	     "description": "The word \"incredible\" in the passage is closest in meaning to",
+	     "options": [
+	       {"text":"Confusing"},
+	       {"text":"Comforting"},
+	       {"text":"Unbelievable","answer":"true"},
+	       {"text":"Interesting"}
+	      ]},
+	      {"type": "choice",
+	     "description": "The word \"out of sight\" in the passage is closest in meaning to",
+	     "options": [
+	       {"text":"Far away"},
+	       {"text":"Hidden","answer":"true"},
+	       {"text":"Partly visible"},
+	       {"text":"Discovered"}
+	      ]},
+	      {"type": "choice",
+	      "description": "According to paragraph 2, where is groundwater usually found?",
+	      "options": [
+	       {"text":"Inside pieces of sand and gravel"},
+	       {"text":"On top of beds of rock"},
+	       {"text":"In fast rivers that are flowing beneath the soil"},
+	       {"text":"In spaces between pieces of sediment","answer":"true"}
+	      ]},
+	      {"type": "choice",
+	      "description": "The phrase \"glacial outwash\" in the passage refers to",
+	      "options": [
+	       {"text":"Fast rivers"},
+	       {"text":"Glaciers"},
+	       {"text":"The huge volumes of water created by glacial melting"},
+	       {"text":"The particles carried in water from melting glaciers","answer":"true"}
+	      ]},
+	      {"type": "choice",
+	      "description": "All of the following are mentioned in paragraph 3 as places that sediment-laden rivers can deposit their sediments EXCEPT",
+	      "options": [
+	       {"text":"A mountain valley","answer":"true"},
+	       {"text":"Flat land"},
+	       {"text":"A lake floor"},
+	       {"text":"The seafloor"}
+	      ]},
+	      {"type": "choice",
+	      "description": "The word \"overlie\" in the passage is closest in meaning to",
+	      "options": [
+	       {"text":"Cover","answer":"true"},
+	       {"text":"Change"},
+	       {"text":"Separate"},
+	       {"text":"Surround"}
+	      ]},
+	       {"type": "choice",
+	      "description": "The phrase \"so much for\" in the passage is closest in meaning to",
+	      "options": [
+	       {"text":"That is enough about","answer":"true"},
+	       {"text":"Now let us turn to"},
+	       {"text":"Of greater concern are"},
+	       {"text":"This is related to"}
+	      ]},
+	      {"type": "choice",
+	      "description": "The word \"plugged in\" in the passage is closet in meaning to",
+	      "options": [
+	       {"text":"Washed"},
+	       {"text":"Dragged"},
+	       {"text":"Filled up","answer":"true"},
+	       {"text":"Soaked through"}
+	      ]},
+	      {"type": "choice",
+	      "description": "According to paragraphs 6 and 7, why is basalt unlike most crystalline forms of rock?",
+	      "options": [
+	       {"text":"It is unusually solid."},
+	       {"text":"It often has high porosity.","answer":"true"},
+	       {"text":"It has a low proportion of empty space."},
+	       {"text":"It is highly permeable."}
+	      ]},
+	      {"type": "choice",
+	      "description": "What is the main purpose of paragraph 7?",
+	      "options": [
+	       {"text":"To explain why water can flow through rock"},
+	       {"text":"To emphasize the large amount of empty space in all rock"},
+	       {"text":"To point out that a rock cannot be both porous and permeable"},
+	       {"text":"To distinguish between two related properties of rock","answer":"true"}
+	      ]},
+	      {"type": "choice",
+	      "description": "Which of the sentences below best expresses the essential information in the highlighted sentence in the passage? Incorrect choices change the meaning in important ways or leave out essential information.",
+	      "options": [
+	       {"text":"Surface tension is not strong enough to retain drops of water in rocks with large pores but it strong enough to hold on to thin films of water in rocks with small pores.","answer":"true"},
+	       {"text":"Water in rocks is held in place by large pores and drains away from small size pores through surface tension."},
+	       {"text":"Small pores and large pores both interact with surface tension to determine whether a rock will hold water as heavy drops or as a thin film."},
+	       {"text":"If the force of surface tension is too weak to hold water in place as heavy drops, the water will continue to be held firmly in place as a thin film when large pores exist."}
+	      ]},
+	      {"type": "insert",
+	      "description": "Look at the four squares [█] that indicate where the following sentence could be added to the passage. <gym type='highlight'>What, then, determines what proportion of the water stays and what proportion drains away?</gym> Where would the sentence best fit? Click on a square to add the sentence to the passage.",
+	      "inserted_sentence": "What, then, determines what proportion of the water stays and what proportion drains away?",
+	      "options": [
+	      {"text":""}, {"text":""}, {"text":""}, {"text":"","answer":"true"}
+	      ]},
+	      {"type": "category",
+	      "hide-article": "true",
+	      "description": "Directions: An introductory sentence for a brief summary of the passage is provided below. Complete the summary by selecting the THREE answer choices that express the most important ideas in the passage. Some sentences do not belong in the summary because they express ideas that are not presented in the passage or are minor ideas in the passage. This question is worth 2 points.",
+	      "category": [
+	      "Much of the ground is actually saturated with water."
+	      ],
+	      "options": [
+	       {"text":"Sediments that hold water were spread by glaciers and are still spread by rivers and streams.","category":"0"},
+	       {"text":"Water is stored underground in beds of loose sand and gravel or in cemented sediment.","category":"0"},
+	       {"text":"The size of a saturated rock’s pores determines how much water it will retain when the rock is put in a dry place.","category":"0"},
+	       {"text":"Groundwater often remains underground for a long time before it emerges again."},
+	       {"text":"Like sandstone, basalt is a crystalline rock that is very porous."},
+	       {"text":"Beds of unconsolidated sediments are typically located at inland sites that were once underwater."}
+	      ]}
+	 ]
+}
