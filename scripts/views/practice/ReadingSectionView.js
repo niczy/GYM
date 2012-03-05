@@ -57,7 +57,13 @@ define(function(require, exports) {
 
 		render: function() {
 			var $ = require('../../libs/jquery');
-			var view = new Backbone.View();
+			var View = new Backbone.View();
+            var el_question = View.make("div", {"id" : "question"});
+            $(this.el).append(el_question);
+            var el_article = View.make('div', {"id" : "article"});
+            $(this.el).append(el_article);
+            this.readingArticleView.el = el_article;
+            this.readingQuestionView.el = el_question;
 
 			if (this.model.dataFetched) {
 				// Make sure the article view shown before the question view.

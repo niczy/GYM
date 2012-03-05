@@ -26,10 +26,25 @@ class TestModel(db.Model):
             "writings": self.writings
         }
 
+    @classmethod
+    def get_by_testid(cls, testid):
+        test_k = db.Key.from_path('TestModel', testid)
+        return db.get(test_k)
+        
 
     @classmethod
     def from_dict(cls, dict_instance):
-        return TestModel(testid=dict_instance.get('id'),
+        test = TestModel.get_by_testid(dict_instance.get('testid'))
+        if test:
+            test.readings = dict_instance.get('readings')
+            test.listenings = dict_instance.get('listenings')
+            test.speakings = dict_instance.get('speakings')
+            test.writings = dict_instance.get('writings')
+            return test
+
+        return TestModel(
+                key_name = dict_instance.get('testid'),
+                testid=dict_instance.get('testid'),
                 readings = dict_instance.get('readings'),
                 listenings = dict_instance.get('listenings'),
                 speakings = dict_instance.get('speakings'),
