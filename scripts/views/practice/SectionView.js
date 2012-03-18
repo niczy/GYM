@@ -5,7 +5,9 @@ define(function(require, exports) {
 		initialize: function() {
 			this.type = this.options.type;
 			this.sectionid = this.options.sectionid;
+            console.log("In SectionView section type is " + this.type);
 			if (this.type == 'reading') {
+                console.log("create reading section");
 				var ReadingSectionModel = require('../../models/practice/ReadingSectionModel');
 				var ReadingSectionView = require('./ReadingSectionView');
 				this.sectionModel = new ReadingSectionModel({

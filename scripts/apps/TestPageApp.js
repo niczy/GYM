@@ -5,12 +5,11 @@ define(function(require, exports) {
 	var TestPageApp = Backbone.Router.extend({
 		initialize: function() {
 			var $ = require('../libs/jquery');
-			var data = JSON.parse($('#configData').html());
-            this.test = data; 
-            console.log("got test info" + data);
+			this.testInfo = JSON.parse($('#test_info').html());
+            this.type = $('#current_section').html().trim();
             var SectionView = require('../views/practice/SectionView');
             this.sectionView = new SectionView({
-                    sectionid : this.sectionid,
+                    sectionid : this.testInfo.readings[0],
                     type : this.type
                 });
             this.sectionView.render();
@@ -39,12 +38,12 @@ define(function(require, exports) {
 		}
 	});
 
-	var app = new SectionPageApp();
+	var app = new TestPageApp();
 	console.log("start result is " + Backbone.history.start({
 		root: "/section/" + app.sectionId
 	}));
 
 	console.log('Main inilized.');
-	return SectionPageApp;
+	return TestPageApp;
 });
 

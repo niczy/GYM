@@ -69,7 +69,6 @@ class ApiCreateSection(JSONRequestHandler):
         section_dict = json.loads(json_str)
         if section_dict['type'] == 'reading':
             reading_section = ReadingSection.from_dict(section_dict)
- 
             logging.info("Section type is " + str(reading_section.sectiontype))
             reading_section.put()
         elif section_dict['type'] == 'listening':
@@ -93,13 +92,14 @@ class PageSection(RequestHandler):
         if section:
             self.render_page("section_page.html", {"config_data": json.dumps({"sectionid": sectionid, "type": section.sectiontype})})
         else:
-            self.response.out.write('page not found')
+            self.error(404)
 
 class PageTest(RequestHandler):
 
     def get(self, testid):
+        current_section = self.request.get("type", "reading")
         logging.info("PageTest testid is " + testid)
         test = TestModel.get_by_testid(testid)
-        self.render_page('test_page.html', {"config_data": test.to_json_str()})
+        self.render_page('test_page.html', {"test_info": test.to_json_str(), "current_section" : current_section})
 
 

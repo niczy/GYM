@@ -7,8 +7,12 @@
     </div>
 </div>
 {% autoescape off%}
-<script type="text/json" id="configData">
-    {{ config_data }}
+<script type="text/json" id="test_info">
+    {{ test_info }}
+</script>
+
+<script type="test/json" id="current_section">
+{{ current_section }}
 </script>
 {% endautoescape %}
 {% endblock %}
